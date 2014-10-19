@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<style type="text/css">
+	body{
+		margin-top: 0px;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.navbar{
+		margin-bottom: 0;
+	}
+	#background-image{
+		width: 100%;
+		position: absolute;
+
+	}
+</style>
+<!-- <img id='background-image' src='static/img/poems.jpg'> -->
+<div class="jumbotron">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-4  main">
+				<h2>Improve and share your <strong>poems</strong></h2>
+				<a href="/signup"><button class="btn btn-lg btn-primary" id="get-started" >Get Started</button></a>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div id="featured" class="container-fluid">
+	<h2>Featured Poems</h2>
+	
+</div>
+{% endblock %}
