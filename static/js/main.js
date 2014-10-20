@@ -19,25 +19,11 @@ $("#signup").submit(function(){
 	return false
   })
 
-//   Add poem
-$("#add-poem").submit(function(){
-
-	$.post("./addpoem",
-		$("#add-poem").serialize(),
-		function(data){
-		    console.log('addpoem');
-		    console.log(data);
-		    if (data.success==true){
-		    	//load profile page
-		    	console.log('opening: '+'/poem/'+data.title)
-		    	window.open('/poem/'+data.title,'_self');
-		    }
-		    else{
-		    }
-		}
-	)
-	console.log('testing blerg');
-	// e.preventDefault();
+//   Add project
+$("#add-project").submit(function(){
+	console.log($("#add-project").serialize());
+	$.post("./addproject",
+		$("#add-project").serialize(),'json')
 	return false
   })
 
@@ -66,16 +52,4 @@ $("#sign-in").submit(function(){
 
 $(document).ready(function(){
 
-    $("#sign-in").hide();
-    $("#login-btn").click(function(){
-    	$("#login-btn").hide();
-    	$("#sign-in").fadeIn(200);
-
-    });
-
-
-    $("#hide-signin").click(function(){
-    	$("#login-btn").show();
-    	$("#sign-in").hide();
-    });
 });

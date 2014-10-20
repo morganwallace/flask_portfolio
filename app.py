@@ -79,13 +79,17 @@ def login():
 
 @app.route('/')
 def home():
-    # projects=db.session.query(project.title, project.body).all()
+    projects=db.session.query(Project.title, Project.body,Project.projectType,Project.tags).all()
     # all_users = User.query.all()
-    # app.logger.debug(projects)
+    app.logger.debug(projects)
     # user_id = request.cookies.get('user_id')
     # flash('Your user id is: '+user_id)
     return render_template('index.html')
 
+## add admin.html soon
+# @app.route('/admin')
+# def admin():
+#     return render_template('admin.html')
 
 @app.route('/add')
 @login_required
@@ -139,19 +143,23 @@ def signin():
 
 @app.route('/addproject' , methods=['POST'])
 def add_project():
-    app.logger.debug(request.form)
+    app.logger.debug("/addproject in app.py:\n"+str(request.form))
     user_id = request.cookies.get('user_id')
     # app.logger.debug(user_id)
     #args to init a project: title, body,user_id,project_type,tags
     #add to database
-    project= project(
+    project= Project(
         title=request.form['title'],
         body=request.form['body'],
         user_id=user_id,
-        project_type="test",
-        tags="test; something")
+        projectType=request.form['projectType'],
+        tags=request.form['tags'],
+        externalLink=request.form['externalLink'],
+        imagesLink=request.form['imagesLink']
+        )
     db.session.add(project)
     db.session.commit()
+    app.logger.debug("Successfully project added to database")
     resp = make_response(jsonify(success=True,title=request.form['title']))
     return resp
 
@@ -159,15 +167,16 @@ def add_project():
 
 @app.route('/project/<title>')
 def project(title):
-    project=db.session.query(project.title, project.body).filter(project.title==title)
-    body=project.first()[1]
+    myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLink).filter(Project.title==title).first()
     # app.logger.debug('opening /project/'+title+'\n'+project.all())
-    return render_template('project.html',title=title, body=body)   
+    return render_template('project.html',
+        title=myproject[0], 
+        body=myproject[1],
+        projectType=myproject[2],
+        tags=myproject[3],
+        externalLink=myproject[4],
+        imagesLink=myproject[5])   
 
-
-@app.route('/poet/<name>')
-def profile(name):
-    return render_template('profile.html',name=name)
 
 
 @app.route('/signup')

@@ -5,14 +5,13 @@ from lxml import html
 #  using xpath
 def scrape(url,xpath):
     parsedObj = html.parse(url)
-    wod=parsedObj.xpath(xpath)
-    print wod
+    return parsedObj.xpath(xpath)
 
 
 ## Example
 def main():
-    scrape(url="http://berkeley-crossfit.com/2013/12/03/wod-12-03-2013/"
-        ,xpath='//*[@class="entry-content"]/p/text()')
+    print scrape(url="http://www.google.com"
+        ,xpath='//*[@class="ProfileTweet-text"]/text()')
 
 
 if __name__ == '__main__':

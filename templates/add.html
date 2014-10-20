@@ -4,15 +4,19 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 main">
-	      <form id='add-poem'>
-	          <input type="text" name="title" value="" class="form-control input-lg" placeholder="Poem Title"  />
+		<h3>Adding a Project</h3>
+	      <form id='add-project'>
+	          <input type="text" name="title" value="" class="form-control input-lg" placeholder="project Title"  />
 	          <br>
-	          <textarea name="body" id='poem-body' class = "form-control input-lg"></textarea>
-
+	          <textarea name="body" value="" id='project-body' class = "form-control input-lg"></textarea>
+	          <input type="text" name="projectType" value="" class="form-control input-lg" placeholder="project type"  />
+	          <input type="text" name="tags" value="" class="form-control input-lg" placeholder="Comma separated tags (e.g. 'vizualization,game,python')"  />
+	          <input type="text" name="externalLink" value="" class="form-control input-lg" placeholder="link to project (e.g. http://www...)"  />
+	          <input type="text" name="imagesLink" value="" class="form-control input-lg" placeholder="comma separated names of images files in 'static/img/'"  />
 	          <!-- Test out plain text -->
-	          <!-- <textarea name="body" id='poem-body-plain' class = "form-control input-lg"></textarea> -->
+	          <!-- <textarea name="body" id='project-body-plain' class = "form-control input-lg"></textarea> -->
 	          <br>
-	          <button class="btn btn-lg btn-primary btn-block" >Save My Poem</button>
+	          <button class="btn btn-lg btn-primary btn-block" >Save My project</button>
 	      </form>
 		</div>
 	</div>

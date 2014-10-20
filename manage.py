@@ -52,16 +52,20 @@ class Project(db.Model):
     title = db.Column(db.String(255))
     body = db.Column(db.Text)
     user_id =db.Column(db.Integer)
-    project_type=db.Column(db.String(255))
+    projectType=db.Column(db.String(255))
     tags=db.Column(db.String(255))
+    externalLink=db.Column(db.String(255))
+    # imagesLinks=db.Column(db.String(255))
 
 
-    def __init__(self, title, body,user_id,project_type,tags):
+    def __init__(self, title, body,user_id,projectType,tags,externalLink):
         self.title = title
         self.body = body
         self.user_id= user_id
-        self.project_type=project_type
+        self.project_type=projectType
         self.tags=tags
+        self.externalLink=externalLink
+        # self.imagesLinks=imagesLinks
 
     def __repr__(self):
         return '<ROW with label: project ID %r>' % self.id

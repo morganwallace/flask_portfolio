@@ -12,4 +12,4 @@ SECRET_KEY = 'my precious'
 CSRF_ENABLED = True
 
 # Connect to the database
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'database.db')
+# SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'database.db')
