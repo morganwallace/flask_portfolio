@@ -4,7 +4,7 @@ from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://sllynvkpwzcmnr:5QO8q__RWGhpNEowuVYs-OEXBZ@ec2-54-225-101-64.compute-1.amazonaws.com:5432/dblnmi4smbffiv"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://ayzcctpvbmwajn:z1bTq5u6fbqWmGFHR0UrOpN_zW@ec2-54-197-249-167.compute-1.amazonaws.com:5432/d25indqqmd1654"
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
@@ -47,38 +47,38 @@ class User(db.Model):
         return '<ROW with label: User ID %r>' % self.id
 
 
-class Poem(db.Model):
+class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255))
     body = db.Column(db.Text)
     user_id =db.Column(db.Integer)
-    poem_type=db.Column(db.String(255))
+    project_type=db.Column(db.String(255))
     tags=db.Column(db.String(255))
 
 
-    def __init__(self, title, body,user_id,poem_type,tags):
+    def __init__(self, title, body,user_id,project_type,tags):
         self.title = title
         self.body = body
         self.user_id= user_id
-        self.poem_type=poem_type
+        self.project_type=project_type
         self.tags=tags
 
     def __repr__(self):
-        return '<ROW with label: Poem ID %r>' % self.id
+        return '<ROW with label: project ID %r>' % self.id
 
 
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id =db.Column(db.Integer)
-    poem_id = db.Column(db.Integer)
+    project_id = db.Column(db.Integer)
     body = db.Column(db.Text)
     created_on = db.Column(db.DateTime, default=db.func.now())
     updated_on = db.Column(db.DateTime, default=db.func.now(), onupdate=db.func.now())
 
 
-    def __init__(self, user_id, poem_id,body):
+    def __init__(self, user_id, project_id,body):
         self.user_id=user_id
-        self.poem_id=poem_id
+        self.project_id=project_id
         self.body=body
 
     def __repr__(self):

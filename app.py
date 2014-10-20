@@ -13,10 +13,10 @@ app = Flask(__name__)
 # Loads configuration from `config.py`
 app.config.from_object('config')
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://sllynvkpwzcmnr:5QO8q__RWGhpNEowuVYs-OEXBZ@ec2-54-225-101-64.compute-1.amazonaws.com:5432/dblnmi4smbffiv"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://ayzcctpvbmwajn:z1bTq5u6fbqWmGFHR0UrOpN_zW@ec2-54-197-249-167.compute-1.amazonaws.com:5432/d25indqqmd1654"
 
 ####### Database classes/schema
-from manage import db, User, Poem
+from manage import db, User, Project
 
 basedir = os.getcwd()
 login_manager = LoginManager()
@@ -79,12 +79,12 @@ def login():
 
 @app.route('/')
 def home():
-    # poems=db.session.query(Poem.title, Poem.body).all()
+    # projects=db.session.query(project.title, project.body).all()
     # all_users = User.query.all()
-    # app.logger.debug(poems)
+    # app.logger.debug(projects)
     # user_id = request.cookies.get('user_id')
     # flash('Your user id is: '+user_id)
-    return render_template('welcome.html')
+    return render_template('index.html')
 
 
 @app.route('/add')
@@ -137,32 +137,32 @@ def signin():
     return resp
 
 
-@app.route('/addpoem' , methods=['POST'])
-def add_poem():
+@app.route('/addproject' , methods=['POST'])
+def add_project():
     app.logger.debug(request.form)
     user_id = request.cookies.get('user_id')
     # app.logger.debug(user_id)
-    #args to init a poem: title, body,user_id,poem_type,tags
+    #args to init a project: title, body,user_id,project_type,tags
     #add to database
-    poem= Poem(
+    project= project(
         title=request.form['title'],
         body=request.form['body'],
         user_id=user_id,
-        poem_type="test",
+        project_type="test",
         tags="test; something")
-    db.session.add(poem)
+    db.session.add(project)
     db.session.commit()
     resp = make_response(jsonify(success=True,title=request.form['title']))
     return resp
 
 
 
-@app.route('/poem/<title>')
-def poem(title):
-    poem=db.session.query(Poem.title, Poem.body).filter(Poem.title==title)
-    body=poem.first()[1]
-    # app.logger.debug('opening /poem/'+title+'\n'+poem.all())
-    return render_template('poem.html',title=title, body=body)   
+@app.route('/project/<title>')
+def project(title):
+    project=db.session.query(project.title, project.body).filter(project.title==title)
+    body=project.first()[1]
+    # app.logger.debug('opening /project/'+title+'\n'+project.all())
+    return render_template('project.html',title=title, body=body)   
 
 
 @app.route('/poet/<name>')
