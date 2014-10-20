@@ -5,16 +5,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- <link rel="shortcut icon" href="../../assets/ico/favicon.ico"> -->
-
-    <title>Morgan Wallace</title>
-
+    {% if pageTitle %}
+      <title>{{ pageTitle }}</title>
+    {% else %}
+      <title>Morgan Wallace</title>
+    {% endif %}
     <!-- Bootstrap core CSS -->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <!-- <link href="../static/css/dashboard.css" rel="stylesheet"> -->
-    <link href="../static/css/contents.css" rel="stylesheet">
-    <!-- <link href="../static/css/sidebar.css" rel="stylesheet"> -->
+    <!-- Custom CSS -->
     <link href="../static/css/style.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->

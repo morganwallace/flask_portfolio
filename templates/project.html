@@ -4,9 +4,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6 col-md-offset-3 main">
-        <h1 class="page-header poem-title">{{title}}</h1>
+        <h1 class="page-header project-title">{{title}}</h1>
           {{body}}
-          
+          {% for piclink in imagesLinks %}
+          	<img src="../{{piclink}}">
+          {% endfor %}
     </div>
   </div>
 </div>

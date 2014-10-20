@@ -5,7 +5,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from functools import wraps
 from flask.ext.login import login_user, LoginManager, logout_user, current_user, login_required
 from flask.ext.openid import OpenID
-import os
+import os,time
 
 app = Flask(__name__)
 
@@ -79,12 +79,25 @@ def login():
 
 @app.route('/')
 def home():
-    projects=db.session.query(Project.title, Project.body,Project.projectType,Project.tags).all()
+    projects=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks,Project.snippet).all()
     # all_users = User.query.all()
-    app.logger.debug(projects)
+    
+    projectsList=[]
+    for proj in projects:
+        projectsList.append({
+            'title':str(proj[0]).title(),
+            'body':proj[1],
+            'projectType':proj[2],
+            'tags':proj[3],
+            'externalLink':proj[4],
+            'imagesLinks':proj[5].split()[0], #only take first photo
+            'snippet':proj[6],
+            })
+    app.logger.debug(projectsList)
     # user_id = request.cookies.get('user_id')
     # flash('Your user id is: '+user_id)
-    return render_template('index.html')
+    return render_template('index.html',
+        projectsList=projectsList)
 
 ## add admin.html soon
 # @app.route('/admin')
@@ -149,13 +162,15 @@ def add_project():
     #args to init a project: title, body,user_id,project_type,tags
     #add to database
     project= Project(
-        title=request.form['title'],
+        title=request.form['title'].lower(), #lower cased to ensure proper url formatting
         body=request.form['body'],
         user_id=user_id,
         projectType=request.form['projectType'],
         tags=request.form['tags'],
         externalLink=request.form['externalLink'],
-        imagesLink=request.form['imagesLink']
+        imagesLinks=request.form['imagesLinks'],
+        snippet=request.form['snippet'],
+        date=time.strptime(request.form['date'],"%m/%d/%Y"),
         )
     db.session.add(project)
     db.session.commit()
@@ -167,15 +182,17 @@ def add_project():
 
 @app.route('/project/<title>')
 def project(title):
-    myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLink).filter(Project.title==title).first()
+    myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks).filter(Project.title==title.lower()).first()
+    title=str(myproject[0]).title()
     # app.logger.debug('opening /project/'+title+'\n'+project.all())
     return render_template('project.html',
-        title=myproject[0], 
+        title=title, 
         body=myproject[1],
         projectType=myproject[2],
-        tags=myproject[3],
+        tags=myproject[3].split(","),
         externalLink=myproject[4],
-        imagesLink=myproject[5])   
+        imagesLinks=myproject[5].split(","),
+        pageTitle=title+" - Morgan Wallace")   
 
 
 
