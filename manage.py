@@ -57,7 +57,7 @@ class Project(db.Model):
     externalLink=db.Column(db.String(255))
     imagesLinks=db.Column(db.String(255))
     snippet=db.Column(db.String(255))
-    date=db.Column(db.DateTime,)
+    date=db.Column(db.Integer)
 
 
     def __init__(self, title, body,user_id,projectType,tags,externalLink,imagesLinks,snippet,date):

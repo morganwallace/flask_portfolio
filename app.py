@@ -170,8 +170,9 @@ def add_project():
         externalLink=request.form['externalLink'],
         imagesLinks=request.form['imagesLinks'],
         snippet=request.form['snippet'],
-        date=time.strptime(request.form['date'],"%m/%d/%Y"),
+        date=int(time.mktime(time.strptime(request.form['date'],"%m/%d/%Y")))/3600/24,
         )
+    # time.strptime(request.form['date'],"%m/%d/%Y")
     db.session.add(project)
     db.session.commit()
     app.logger.debug("Successfully project added to database")

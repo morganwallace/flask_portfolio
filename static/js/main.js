@@ -23,7 +23,15 @@ $("#signup").submit(function(){
 $("#add-project").submit(function(){
 	console.log($("#add-project").serialize());
 	$.post("./addproject",
-		$("#add-project").serialize(),'json')
+		$("#add-project").serialize(), function(data){
+			if (data.success==true){
+		    	//load profile page
+		    	window.open('/','_self');
+		    }
+		    else{
+		    	alert(data);
+		    }
+		},'json')
 	return false
   })
 
