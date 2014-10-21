@@ -10,30 +10,35 @@
 	.navbar{
 		margin-bottom: 0;
 	}
-	#background-image{
-		width: 100%;
-		position: absolute;
 
-	}
 </style>
-<div>
-	<h2>Projects</h2>
-	<ul id="projectsList">
-		{% for project in projectsList %}
-			<a href="/project/{{project.title.lower()}}">
-				<li class="wrapper">
-					<img src="{{project.imagesLinks}}">
-					<div class="description">
-						<div class="description_content">
-							<h4>{{project.title}}</h4>
-							<p>{{project.snippet}}</p>
-						</div>
-					</div>
-				</li>
-			</a>
-		{% endfor %}
-	</ul>
+<div id="imgWrapper">
+	<img id="bg" src='../static/img/longface.jpg'>
 </div>
+
+<div  class="row">
+	<div class="col-sm-6 col-sm-offset-1" id="projectsViewer">
+		<h2 id="projects">Projects</h2>
+		<ul id="projectsList">
+			{% for project in projectsList %}
+				<a href="/project/{{project.title.lower()}}">
+					<li class="row">
+						
+						<div class="description col-lg-8">
+							<div class="description_content">
+								<h4>{{project.title}}</h4>
+								<p>{{project.snippet}}</p>
+							</div>
+						</div>
+						<img class="projectPic col-lg-4" src="static/img/{{project.imagesLinks}}">
+					</li>
+				</a>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+	
+
 
 
 {% endblock %}

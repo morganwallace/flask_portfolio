@@ -32,7 +32,7 @@ $("#add-project").submit(function(){
 		    	alert(data);
 		    }
 		},'json')
-	return false
+	// return false
   })
 
 
@@ -58,6 +58,33 @@ $("#sign-in").submit(function(){
 	return false
   })
 
-$(document).ready(function(){
+$(window).load(function() {    
+
+	var theWindow        = $(window),
+	    $bg              = $("#bg"),
+	    aspectRatio      = $bg.width() / $bg.height();
+
+	// $("#projectsViewer").css(
+	// 	"margin-top",theWindow.height()-400
+	// )
+	    			    		
+	function resizeBg() {
+		
+		if ( (theWindow.width() / theWindow.height()) > aspectRatio ) {
+		    $bg
+		    	.removeClass()
+		    	.addClass('bgheight');
+		    	// $("#imgWrapper").css("height",theWindow.height());
+
+		} else {
+		    $bg
+		    	.removeClass()
+		    	.addClass('bgwidth');
+		    	// $("#imgWrapper").css("height",theWindow.height());
+		}
+					
+	}
+	                   			
+	theWindow.resize(resizeBg).trigger("resize");
 
 });

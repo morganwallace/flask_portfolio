@@ -2,12 +2,14 @@
 {% block title %}Login{% endblock %}
 {% block content %}
 <div class="container-fluid">
+<a href="/"><h4>Return Home</h4></a>
   <div class="row">
     <div class="col-md-6 col-md-offset-3 main">
         <h1 class="page-header project-title">{{title}}</h1>
           {{body}}
           {% for piclink in imagesLinks %}
-          	<img src="../{{piclink}}">
+          <br><br>
+          	<img src="../static/img/{{piclink}}">
           {% endfor %}
     </div>
   </div>

@@ -1,68 +1,72 @@
 #wrap{
 	margin-top: 50px;
 }
-#add-poem textarea{
-	width: 100%;
-	min-height: 300px;
-}
-#login-btn{
-	cursor: hand;
-	cursor: pointer;
-}
-#signup input{
-	margin-bottom: 5px;
-}
+
+
+
 body{
 	/*margin-top: 70px;*/
 	padding-top: 50px;
+	overflow-x: hidden; 
 }
-#hide-signin{
-	color: #999;
+
+
+/*#mypic{
+	background-image: url('../static/img/profile.jpg') no-repeat center center fixed;
+	height: 300;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}*/
+
+#bg { position: fixed; top: 0; right: 0;}
+.bgwidth { width: 100%; }
+.bgheight { height: 100%; }
+
+
+.projectPic{
+	max-width: 400px;
+	max-height: 300px;
 }
-#hide-signin:hover{
-	text-decoration: none;
-	border-radius: 50%;
-	border:1px;
-	border-color: #999;
-}
-#get-started{
-	border: none;
-}
+
 .navbar-brand{
 	font-size: 15px;
 	font-weight: 100;
 }
-.navbar,h1,h2,h3,h4,h5,h6{
+.navbar,h1,h2,h3,h4,h5,h6,p{
 	font-family: monospace;
+	color: black;
 }
-#projectsList{
-	list-style: none;
-}
-#projectsList li{
-	/*width: 300px;*/
+
+#about{
 	color: white;
 }
 
+#projectsViewer{
+	background-color: white;
+	margin-top: 200px;
+	box-shadow: 0px 0px 26px black;
+	margin-bottom: 30px;
+}
 
+.description{
+	float: left;
+}
+#projectsList{
+	list-style: none;
+	color: white;
+	padding-left: 0;
+}
+#projectsList li{
+	/*width: 300px;*/
+	padding-bottom: 20px
+}
+.navbar{
+	opacity: .8;
+	/*position: absolute;*/
+}
+/*#imgWrapper{
+	overflow: hidden;
+}*/
 
-.wrapper{  
-    float:left; /* important */  
-    position:relative; /* important(so we can absolutely position the description div */  
-}  
-.description{  
-    position:absolute; /* absolute position (so we can position it where we want)*/  
-    bottom:0px; /* position will be on bottom */  
-    left:0px;  
-    width:100%;  
-    /* styling bellow */  
-    background-color:black;  
-    font-family: 'tahoma';  
-    font-size:15px;  
-    color:white;  
-    opacity:0.6; /* transparency */  
-    filter:alpha(opacity=60); /* IE transparency */  
-}  
-.description_content{  
-    padding:10px;  
-    margin:0px;  
-}  

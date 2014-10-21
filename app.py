@@ -93,7 +93,7 @@ def home():
             'imagesLinks':proj[5].split()[0], #only take first photo
             'snippet':proj[6],
             })
-    app.logger.debug(projectsList)
+    # app.logger.debug(projectsList)
     # user_id = request.cookies.get('user_id')
     # flash('Your user id is: '+user_id)
     return render_template('index.html',
