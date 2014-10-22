@@ -103,6 +103,6 @@ def not_found_error(error):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=os.environ.get('PORT'))
     # app.run(debug=True)
 
