@@ -4,7 +4,7 @@ from flask import session, request, make_response, jsonify, flash, url_for, redi
 from flask.ext.sqlalchemy import SQLAlchemy
 from functools import wraps
 # from flask.ext.login import login_user, LoginManager, logout_user, current_user, login_required
-from flask.ext.openid import OpenID
+# from flask.ext.openid import OpenID
 import os,time
 
 app = Flask(__name__)
@@ -39,7 +39,7 @@ def home():
 
 
 @app.route('/add')
-@login_required
+# @login_required
 def add():
     return render_template('add.html')
 
