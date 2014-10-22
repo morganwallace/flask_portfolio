@@ -23,7 +23,6 @@ from manage import db, User, Project
 def home():
     projects=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks,Project.snippet).all()
     # all_users = User.query.all()
-    
     projectsList=[]
     for proj in projects:
         projectsList.append({
@@ -103,6 +102,6 @@ def not_found_error(error):
 
 
 if __name__ == '__main__':
-    app.run(port=os.environ.get('PORT'))
+    app.run()
     # app.run(debug=True)
 
