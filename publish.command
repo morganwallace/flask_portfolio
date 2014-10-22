@@ -5,3 +5,4 @@ git add .
 git commit -m 'testing'
 git push heroku master
 heroku open
+heroku logs
