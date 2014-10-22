@@ -3,7 +3,7 @@ from flask import render_template
 from flask import session, request, make_response, jsonify, flash, url_for, redirect,g
 from flask.ext.sqlalchemy import SQLAlchemy
 from functools import wraps
-from flask.ext.login import login_user, LoginManager, logout_user, current_user, login_required
+# from flask.ext.login import login_user, LoginManager, logout_user, current_user, login_required
 from flask.ext.openid import OpenID
 import os,time
 
