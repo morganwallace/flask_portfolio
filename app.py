@@ -13,7 +13,8 @@ app = Flask(__name__)
 # Loads configuration from `config.py`
 app.config.from_object('config')
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://ayzcctpvbmwajn:z1bTq5u6fbqWmGFHR0UrOpN_zW@ec2-54-197-249-167.compute-1.amazonaws.com:5432/d25indqqmd1654"
+# app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://ayzcctpvbmwajn:z1bTq5u6fbqWmGFHR0UrOpN_zW@ec2-54-197-249-167.compute-1.amazonaws.com:5432/d25indqqmd1654"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
 
 ####### Database classes/schema
 from manage import db, User, Project

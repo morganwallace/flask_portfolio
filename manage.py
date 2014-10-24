@@ -2,9 +2,10 @@ from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
+import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://ayzcctpvbmwajn:z1bTq5u6fbqWmGFHR0UrOpN_zW@ec2-54-197-249-167.compute-1.amazonaws.com:5432/d25indqqmd1654"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
@@ -59,6 +60,7 @@ class Project(db.Model):
     snippet=db.Column(db.String(255))
     date=db.Column(db.Integer)
 
+    app.logger.debug(app.config['SQLALCHEMY_DATABASE_URI'])
 
     def __init__(self, title, body,user_id,projectType,tags,externalLink,imagesLinks,snippet,date):
         self.title = title
