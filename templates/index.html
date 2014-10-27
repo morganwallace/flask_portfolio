@@ -26,19 +26,21 @@
 						<a href="/project/{{project.title.lower()}}">
 							<div class="description ">
 								<div class="description_content">
-									<div class="row">
-										<p class="col-sm-8">{{project.title}}</p>
+									<div class="row project-header">
+										<h3 class="col-sm-8">{{project.title}}</h3>
 										<p class="col-sm-4 dates">{{project.date}}</p>
 									</div>
 									<p>{{project.snippet}}</p>
 								</div>
 							</div>
-							<img class="projectPic " src="static/img/{{project.imagesLinks}}">
+							<img class="projectPic " src="{{project.imagesLinks}}">
 						</a>
 						<div class="tags">
 							{% for tag in project.tags %}
 								<!-- <span class="col-sm-6"> -->
-									<span class="label label-default">{{tag}}</span>
+									<a href="/tags/{{tag}}">
+										<span class="label label-default">{{tag}}</span>
+									</a>
 								<!-- </span> -->
 							{% endfor %}
 						</div>

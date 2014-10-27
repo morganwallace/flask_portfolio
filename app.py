@@ -27,14 +27,14 @@ def home():
     projectsList=[]
 
     for proj in projects:
-        app.logger.debug(proj[7])
+        # app.logger.debug(proj[7])
         projectsList.append({
             'title':str(proj[0]).title(),
             'body':proj[1],
             'projectType':proj[2],
             'tags':proj[3].split(","),
             'externalLink':proj[4],
-            'imagesLinks':proj[5].split()[0], #only take first photo
+            'imagesLinks':url_for('static',filename='img/'+proj[5].split()[0]), #only take first photo
             'snippet':proj[6],
             'date':date.fromtimestamp(proj[7]*24*3600).strftime("%d %b %Y"),
             'timestamp':proj[7],
@@ -75,11 +75,11 @@ def add_project():
 
 
 
-@app.route('/project/<title>')
-def project(title):
-    myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks).filter(Project.title==title.lower()).first()
+@app.route('/project/<t>')
+def project(t):
+    myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks).filter(Project.title==t.lower()).first()
     title=str(myproject[0]).title()
-    # app.logger.debug('opening /project/'+title+'\n'+project.all())
+    app.logger.debug(myproject[5].split(","))
     return render_template('project.html',
         title=title, 
         body=myproject[1],
@@ -91,18 +91,25 @@ def project(title):
 
 
 @app.route('/tags/<tag>')
-def project(title):
-    myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks).filter(Project.tags.contains(tag)).first()
-    title=str(myproject[0]).title()
-    # app.logger.debug('opening /project/'+title+'\n'+project.all())
-    return render_template('project.html',
-        title=title, 
-        body=myproject[1],
-        projectType=myproject[2],
-        tags=myproject[3].split(","),
-        externalLink=myproject[4],
-        imagesLinks=myproject[5].split(","),
-        pageTitle=title+" - Morgan Wallace")   
+def project(tag):
+    projects=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks,Project.snippet,Project.date).filter(Project.tags.contains(tag)).all()
+    # projects=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks).filter(.all()    
+    projectsList=[]
+
+    for proj in projects:
+        # app.logger.debug(proj[7])
+        projectsList.append({
+            'title':str(proj[0]).title(),
+            'body':proj[1],
+            'projectType':proj[2],
+            'tags':proj[3].split(","),
+            'externalLink':proj[4],
+            'imagesLinks':url_for('static',filename='img/'+proj[5].split()[0]), #only take first photo
+            'snippet':proj[6],
+            'date':date.fromtimestamp(proj[7]*24*3600).strftime("%d %b %Y"),
+            'timestamp':proj[7],
+            })
+    return render_template('index.html', projectsList=projectsList)   
 
 
 @app.route('/robots.txt')
@@ -121,6 +128,12 @@ def not_found_error(error):
 if __name__ == '__main__':
     # app.run()
     port = int(os.environ.get("PORT", 5000))
-    app.run(debug=True, host='0.0.0.0', port=port)
+
+    #to run a debug mode only when developing locally run this in terminal:
+    # $ export SERVERTYPE="dev"
+    if os.environ.get('SERVERTYPE')=='dev':
+        app.debug = True
+        
+    app.run(host='0.0.0.0', port=port)
     # app.run(debug=True)
 

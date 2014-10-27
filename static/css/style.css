@@ -8,9 +8,14 @@ body{
 	/*margin-top: 70px;*/
 	padding-top: 50px;
 	overflow-x: hidden; 
-	background-color: black;
+	color: grey;
+	/*background-color: black;*/
 }
 
+#footer{
+	padding-bottom: 10px;
+	box-shadow: inset 0px 0px 0px black;
+}
 
 /*#mypic{
 	background-image: url('../static/img/profile.jpg') no-repeat center center fixed;
@@ -57,13 +62,26 @@ body{
 	padding-left: 20px;
 }
 .tags{
-	margin-left: 15px;
+	/*margin-left: 15px;*/
 	margin-top: 5px;
+}
+.tags a:hover{
+    text-decoration: none;
+}
+.tags a span:hover{
+	background-color: blue;
+}
+
+.project-header{
+	position: relative;
 }
 
 .dates{
 	font-weight: 200;
 	color: darkgray;
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }
 
 .description{
