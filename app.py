@@ -75,9 +75,9 @@ def add_project():
 
 
 
-@app.route('/project/<t>')
-def project(t):
-    myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks).filter(Project.title==t.lower()).first()
+@app.route('/project/<title>')
+def project(title):
+    myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks).filter(Project.title==title.lower()).first()
     title=str(myproject[0]).title()
     app.logger.debug(myproject[5].split(","))
     return render_template('project.html',
@@ -91,7 +91,7 @@ def project(t):
 
 
 @app.route('/tags/<tag>')
-def project(tag):
+def tag(tag):
     projects=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks,Project.snippet,Project.date).filter(Project.tags.contains(tag)).all()
     # projects=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks).filter(.all()    
     projectsList=[]
@@ -109,7 +109,7 @@ def project(tag):
             'date':date.fromtimestamp(proj[7]*24*3600).strftime("%d %b %Y"),
             'timestamp':proj[7],
             })
-    return render_template('index.html', projectsList=projectsList)   
+    return render_template('tags.html', projectsList=projectsList,pageTitle=tag+" - Morgan Wallace")   
 
 
 @app.route('/robots.txt')
@@ -131,9 +131,11 @@ if __name__ == '__main__':
 
     #to run a debug mode only when developing locally run this in terminal:
     # $ export SERVERTYPE="dev"
+    # print os.environ.get('SERVERTYPE')
     if os.environ.get('SERVERTYPE')=='dev':
         app.debug = True
-        
+        # print 'debug mode'
+
     app.run(host='0.0.0.0', port=port)
     # app.run(debug=True)
 

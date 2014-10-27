@@ -6,7 +6,13 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3 main">
         <h1 class="page-header project-title">{{title}}</h1>
-          {{body}}
+          <p>{{body}}</p>
+          {% if externalLink %}
+          <br>
+            <a href="{{externalLink}}" class="navbar-btn btn-success btn">
+             <div class="glyphicon glyphicon-star"></div>  View {{title}}
+            </a>
+          {% endif %}
           {% for piclink in imagesLinks %}
           <br><br>
           	<img src="../static/img/{{piclink}}">
