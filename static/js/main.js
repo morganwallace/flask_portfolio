@@ -1,23 +1,4 @@
-$("#signup").submit(function(){
 
-	$.post("./adduser",
-		$("#signup").serialize(),
-		function(data){
-		    console.log('signup');
-		    console.log(data);
-		    if (data.success==true){
-		    	//load profile page
-		    	window.open('/','_self');
-		    }
-		    else{
-		    	alert('email is not unique!');
-		    }
-		}
-	)
-	console.log('testing blerg');
-	// e.preventDefault();
-	return false
-  })
 
 //   Add project
 $("#add-project").submit(function(){
@@ -37,29 +18,8 @@ $("#add-project").submit(function(){
 
 
 
-//sign-in
-$("#sign-in").submit(function(){
-
-	$.post("./signin",
-		$("#sign-in").serialize(),
-		function(data){
-		    console.log('sign-in');
-		    console.log(data);
-		    if (data.success==true){
-		    	console.log('sign in success');
-		    }
-		    else{
-		    	console.log('sign in failure');
-		    }
-		}
-	)
-	console.log('testing sign-in');
-	// e.preventDefault();
-	return false
-  })
-
 $(window).load(function() {    
-
+$("#bg").hide();
 	var theWindow        = $(window),
 	    $bg              = $("#bg"),
 	    aspectRatio      = $bg.width() / $bg.height();
@@ -90,21 +50,21 @@ $(window).load(function() {
 			// if in desktop view
 			else{
 				console.log("desktop view");
+
+				// if the window is wider than tall then max height to show ...
+				//cropped photo until full resolution, then strech (see next comment)
 				if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
-				    
 				    $bg
 				    	.removeClass()
 				    	.attr("style","")
 				    	.addClass('bgheight');
-				    	// $("#imgWrapper").css("height",theWindow.height());
-				    	console.log('height');
+
+				    	//once the window gets wider than the full resolution picture
 				    	if (theWindow.width()>$bg.width()) {
 				    		$bg
 						    	.removeClass()
 						    	.attr("style","")
 						    	.addClass('bgwidth');
-						    	// $("#imgWrapper").css("height",theWindow.height());
-						    	console.log('width');
 						    	};
 
 				} else {
@@ -112,38 +72,15 @@ $(window).load(function() {
 				    	.removeClass()
 				    	.attr("style","")
 				    	.addClass('bgwidth');
-				    	// $("#imgWrapper").css("height",theWindow.height());
 				    	console.log('width');
 				}
-				// console.log($("#projectsViewer").css("margin-top")+$(".navbar").height());
 
-			}
-		// if (topImageArea> $bg.height()){
-			
-			
-		// }else{
-		// 	console.log('width');
-		// };
-		
+			}	
 	}
-		
-	// 	if ( (theWindow.width() / theWindow.height()) > aspectRatio ) {
-	// 	    $bg
-	// 	    	.removeClass()
-	// 	    	.addClass('bgheight');
-	// 	    	// $("#imgWrapper").css("height",theWindow.height());
-	// 	    	console.log('height');
-
-	// 	} else {
-	// 	    $bg
-	// 	    	.removeClass()
-	// 	    	.addClass('bgwidth');
-	// 	    	// $("#imgWrapper").css("height",theWindow.height());
-	// 	    	console.log('width');
-	// 	}
-					
-	// }
-	                   			
 	theWindow.resize(resizeBg).trigger("resize");
 
+});
+
+$(document).ready(function(){
+	$("#bg").fadeIn(300);
 });

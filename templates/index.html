@@ -15,29 +15,40 @@
 
 	<img id="bg" src='../static/img/longface.jpg'>
 
-
-<div  class="row">
-	<div class="col-sm-6 col-sm-offset-1" id="projectsViewer">
-		<h2 id="projects">Projects</h2>
-		<ul id="projectsList">
-			{% for project in projectsList %}
-				<a href="/project/{{project.title.lower()}}">
+<div class="container-fluid">
+	<div  class="row">
+		<div class="col-sm-6 col-sm-offset-1" id="projectsViewer">
+			<h2 id="projects">Projects</h2>
+			<ul id="projectsList">
+				{% for project in projectsList %}
+					
 					<li class="row">
-						
-						<div class="description col-lg-8">
-							<div class="description_content">
-								<h4>{{project.title}}</h4>
-								<p>{{project.snippet}}</p>
+						<a href="/project/{{project.title.lower()}}">
+							<div class="description ">
+								<div class="description_content">
+									<div class="row">
+										<p class="col-sm-8">{{project.title}}</p>
+										<p class="col-sm-4 dates">{{project.date}}</p>
+									</div>
+									<p>{{project.snippet}}</p>
+								</div>
 							</div>
+							<img class="projectPic " src="static/img/{{project.imagesLinks}}">
+						</a>
+						<div class="tags">
+							{% for tag in project.tags %}
+								<!-- <span class="col-sm-6"> -->
+									<span class="label label-default">{{tag}}</span>
+								<!-- </span> -->
+							{% endfor %}
 						</div>
-						<img class="projectPic col-lg-4" src="static/img/{{project.imagesLinks}}">
 					</li>
-				</a>
-			{% endfor %}
-		</ul>
+					
+				{% endfor %}
+			</ul>
+		</div>
 	</div>
 </div>
-	
 
 
 

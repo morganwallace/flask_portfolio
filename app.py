@@ -6,6 +6,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 # from flask.ext.login import login_user, LoginManager, logout_user, current_user, login_required
 # from flask.ext.openid import OpenID
 import os,time
+from datetime import date
 
 app = Flask(__name__)
 
@@ -13,7 +14,6 @@ app = Flask(__name__)
 # Loads configuration from `config.py`
 app.config.from_object('config')
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://ayzcctpvbmwajn:z1bTq5u6fbqWmGFHR0UrOpN_zW@ec2-54-197-249-167.compute-1.amazonaws.com:5432/d25indqqmd1654"
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
 
 ####### Database classes/schema
@@ -22,18 +22,22 @@ from manage import db, User, Project
 
 @app.route('/')
 def home():
-    projects=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks,Project.snippet).all()
+    projects=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks,Project.snippet,Project.date).all()
     # all_users = User.query.all()
     projectsList=[]
+
     for proj in projects:
+        app.logger.debug(proj[7])
         projectsList.append({
             'title':str(proj[0]).title(),
             'body':proj[1],
             'projectType':proj[2],
-            'tags':proj[3],
+            'tags':proj[3].split(","),
             'externalLink':proj[4],
             'imagesLinks':proj[5].split()[0], #only take first photo
             'snippet':proj[6],
+            'date':date.fromtimestamp(proj[7]*24*3600).strftime("%d %b %Y"),
+            'timestamp':proj[7],
             })
     return render_template('index.html',
         projectsList=projectsList)
@@ -86,7 +90,19 @@ def project(title):
         pageTitle=title+" - Morgan Wallace")   
 
 
-
+@app.route('/tags/<tag>')
+def project(title):
+    myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks).filter(Project.tags.contains(tag)).first()
+    title=str(myproject[0]).title()
+    # app.logger.debug('opening /project/'+title+'\n'+project.all())
+    return render_template('project.html',
+        title=title, 
+        body=myproject[1],
+        projectType=myproject[2],
+        tags=myproject[3].split(","),
+        externalLink=myproject[4],
+        imagesLinks=myproject[5].split(","),
+        pageTitle=title+" - Morgan Wallace")   
 
 
 @app.route('/robots.txt')
