@@ -78,6 +78,8 @@ def add_project():
 @app.route('/project/<title>')
 def project(title):
     myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks).filter(Project.title==title.lower()).first()
+    app.logger.debug(myproject)
+    app.logger.debug(title)
     title=str(myproject[0]).title()
     app.logger.debug(myproject[5].split(","))
     return render_template('project.html',
