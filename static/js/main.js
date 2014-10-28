@@ -19,7 +19,8 @@ $("#add-project").submit(function(){
 
 
 $(window).load(function() {    
-$("#bg").hide();
+	$("#bg").hide();
+	
 	var theWindow        = $(window),
 	    $bg              = $("#bg"),
 	    aspectRatio      = $bg.width() / $bg.height();
@@ -31,7 +32,7 @@ $("#bg").hide();
 	    			    		
 	function resizeBg() {
 		//if in mobile view
-		if ($("#projectsViewer").width()>=theWindow.width()) {
+		if ($("#projectsViewer").width()+30>=theWindow.width()) {
 			console.log("mobile view");
 			if ((theWindow.width() / topImageArea) > aspectRatio ){
 				console.log("mini width");
@@ -48,34 +49,34 @@ $("#bg").hide();
 		    };
 			}
 			// if in desktop view
-			else{
-				console.log("desktop view");
+		else{
+			console.log("desktop view");
 
-				// if the window is wider than tall then max height to show ...
-				//cropped photo until full resolution, then strech (see next comment)
-				if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
-				    $bg
-				    	.removeClass()
-				    	.attr("style","")
-				    	.addClass('bgheight');
+			// if the window is wider than tall then max height to show ...
+			//cropped photo until full resolution, then strech (see next comment)
+			if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+			    $bg
+			    	.removeClass()
+			    	.attr("style","")
+			    	.addClass('bgheight');
 
-				    	//once the window gets wider than the full resolution picture
-				    	if (theWindow.width()>$bg.width()) {
-				    		$bg
-						    	.removeClass()
-						    	.attr("style","")
-						    	.addClass('bgwidth');
-						    	};
+			    	//once the window gets wider than the full resolution picture
+			    	if (theWindow.width()>$bg.width()) {
+			    		$bg
+					    	.removeClass()
+					    	.attr("style","")
+					    	.addClass('bgwidth');
+					    	};
 
-				} else {
-				    $bg
-				    	.removeClass()
-				    	.attr("style","")
-				    	.addClass('bgwidth');
-				    	console.log('width');
-				}
+			} else {
+			    $bg
+			    	.removeClass()
+			    	.attr("style","")
+			    	.addClass('bgwidth');
+			    	console.log('width');
+			}
 
-			}	
+		}	
 	}
 	theWindow.resize(resizeBg).trigger("resize");
 
