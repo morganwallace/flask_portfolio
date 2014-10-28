@@ -23,7 +23,7 @@
 				{% for project in projectsList %}
 					
 					<li class="row">
-						<a href="/project/{{project.title.lower()}}">
+						<a href="/project/{{project.title.lower().replace(' ','-')}}">
 							<div class="description ">
 								<div class="description_content">
 									<div class="row project-header">

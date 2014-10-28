@@ -39,6 +39,8 @@ def home():
             'date':date.fromtimestamp(proj[7]*24*3600).strftime("%d %b %Y"),
             'timestamp':proj[7],
             })
+    projectsList= sorted(projectsList, key=lambda k: k['timestamp'])
+    projectsList.reverse()
     return render_template('index.html',
         projectsList=projectsList)
 
@@ -77,6 +79,7 @@ def add_project():
 
 @app.route('/project/<title>')
 def project(title):
+    title=title.replace("-"," ")
     myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks).filter(Project.title==title.lower()).first()
     app.logger.debug(myproject)
     app.logger.debug(title)
