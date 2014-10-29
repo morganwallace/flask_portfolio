@@ -2,9 +2,12 @@
 {% block title %}Login{% endblock %}
 {% block content %}
 <div class="container-fluid">
-<a href="/"><h4>Return Home</h4></a>
   <div class="row">
     <div class="col-md-6 col-md-offset-3 main">
+        <a href="/" >
+          <span id="home-btn" class="btn-default btn">
+            <div class="glyphicon glyphicon-home"></div>      Return Home</span>
+        </a>
         <h1 class="page-header project-title">{{title}}</h1>
           <p>{{body}}</p>
           {% if externalLink %}

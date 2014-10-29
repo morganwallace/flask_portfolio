@@ -57,7 +57,7 @@ or if you're running Zsh:
 
 	$ nano ~/.zshrc
 	
-In either case put these 2 environment variables in the file like so:
+In either case put these 2 environment variables in the rc file of whichever shell you use like so:
 
 	export DB_URI="postgres://..."
 	export SERVERTYPE='dev'

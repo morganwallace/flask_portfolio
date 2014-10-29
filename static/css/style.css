@@ -109,6 +109,9 @@ body{
 	/*position: absolute;*/
 }
 
+#home-btn{
+	margin-top: 10px;
+}
 
 .project-images{
 	max-width: 100%;
