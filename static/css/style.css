@@ -69,7 +69,7 @@ body{
     text-decoration: none;
 }
 .tags a span:hover{
-	background-color: blue;
+	background-color: black;
 }
 
 .project-header{
