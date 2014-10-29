@@ -41,8 +41,10 @@ def home():
             })
     projectsList= sorted(projectsList, key=lambda k: k['timestamp'])
     projectsList.reverse()
+
+    gaID=os.environ.get('gaID')
     return render_template('index.html',
-        projectsList=projectsList)
+        projectsList=projectsList,gaID=gaID)
 
 
 @app.route('/add')
