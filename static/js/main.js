@@ -84,7 +84,7 @@ $(window).load(function() {
 
 $(document).ready(function(){
 	$("#bg").fadeIn(300);
-	if ($(".project-link").attr('href').search('github')attr('href').search('github')>0){
-		$(".project-link").text('Source code on GitHub');
-	}
+	// if ($(".project-link").attr('href').search('github')attr('href').search('github')>0){
+	// 	$(".project-link").text('Source code on GitHub');
+	// }
 });
