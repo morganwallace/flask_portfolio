@@ -27,14 +27,14 @@ def home():
     projectsList=[]
 
     for proj in projects:
-        # app.logger.debug(proj[7])
+        app.logger.debug(proj[5].split(",")[0])
         projectsList.append({
             'title':str(proj[0]).title(),
             'body':proj[1],
             'projectType':proj[2],
             'tags':proj[3].split(","),
             'externalLink':proj[4],
-            'imagesLinks':url_for('static',filename='img/'+proj[5].split()[0]), #only take first photo
+            'imagesLinks':url_for('static',filename='img/'+proj[5].split(",")[0]), #only take first photo
             'snippet':proj[6],
             'date':date.fromtimestamp(proj[7]*24*3600).strftime("%d %b %Y"),
             'timestamp':proj[7],
