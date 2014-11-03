@@ -59,10 +59,11 @@ class Project(db.Model):
     imagesLinks=db.Column(db.String(255))
     snippet=db.Column(db.String(255))
     date=db.Column(db.Integer)
+    codeLink=db.Column(db.String(255))
+    cover_photo=db.Column(db.String(255))
+    
 
-    app.logger.debug(app.config['SQLALCHEMY_DATABASE_URI'])
-
-    def __init__(self, title, body,user_id,projectType,tags,externalLink,imagesLinks,snippet,date):
+    def __init__(self, title, body,user_id,projectType,tags,externalLink,imagesLinks,snippet,date,codeLink,cover_photo):
         self.title = title
         self.body = body
         self.user_id= user_id
@@ -72,7 +73,9 @@ class Project(db.Model):
         self.imagesLinks=imagesLinks
         self.snippet=snippet
         self.date=date
-
+        self.codeLink=codeLink
+        self.cover_photo=cover_photo
+        
     def __repr__(self):
         return '<ROW with label: project ID %r>' % self.id
 
