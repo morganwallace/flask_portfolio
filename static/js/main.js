@@ -19,7 +19,6 @@ $("#add-project").submit(function(){
 
 
 $(window).load(function() {    
-	$("#bg").hide();
 	
 	var theWindow        = $(window),
 	    $bg              = $("#bg"),
@@ -80,10 +79,12 @@ $(window).load(function() {
 	}
 	theWindow.resize(resizeBg).trigger("resize");
 
+
+	$("#bg").show();
 });
 
 $(document).ready(function(){
-	$("#bg").fadeIn(300);
+	
 	// if ($(".project-link").attr('href').search('github')attr('href').search('github')>0){
 	// 	$(".project-link").text('Source code on GitHub');
 	// }

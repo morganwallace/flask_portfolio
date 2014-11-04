@@ -26,7 +26,12 @@ body{
     background-size: cover;
 }*/
 
-#bg { position: fixed; top: 0; right: 0;}
+#bg { 
+	position: fixed;
+	top: 0; 
+	right: 0;
+	/*width: 100%;*/
+}
 .bgwidth { width: 100%; }
 .bgheight { height: 100%; }
 /*.bgheightmini{height: }*/
