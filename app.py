@@ -82,7 +82,7 @@ def add_project():
 @app.route('/project/<title>')
 def project(title):
     title=title.replace("-"," ")
-    myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks).filter(Project.title==title.lower()).first()
+    myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks,Project.date).filter(Project.title==title.lower()).first()
     app.logger.debug(myproject)
     app.logger.debug(title)
     title=str(myproject[0]).title()
@@ -94,7 +94,9 @@ def project(title):
         tags=myproject[3].split(","),
         externalLink=myproject[4],
         imagesLinks=myproject[5].split(","),
-        pageTitle=title+" - Morgan Wallace")   
+        pageTitle=title+" - Morgan Wallace",
+        date=date.fromtimestamp(myproject[6]*24*3600).strftime("%b %d, %Y"),
+        )   
 
 
 @app.route('/tags/<tag>')

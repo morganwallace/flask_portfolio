@@ -3,23 +3,43 @@
 {% block content %}
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3 main">
-        <a href="/" >
-          <span id="home-btn" class="btn-default btn">
-            <div class="glyphicon glyphicon-home"></div>      Return Home</span>
-        </a>
-        <h1 class="page-header project-title">{{title}}</h1>
+    <div class="col-md-8 col-md-offset-2 main">
+        
+        <div id="content-box">
+         
+          <h1 class="page-header project-title ">{{title}}</h1>
+          <h4 >{{date}}</h4>
+          
+          
+          <div class="tags">
+              {% for tag in tags %}
+                <!-- <span class="col-sm-6"> -->
+                  <a href="/tags/{{tag}}">
+                    <span class="label label-default">{{tag}}</span>
+                  </a>
+                <!-- </span> -->
+              {% endfor %}
+
+            </div>
+            <br>
           <p>{{body}}</p>
           {% if externalLink %}
-          <br>
-            <a href="{{externalLink}}" class="navbar-btn project-link btn-success btn">
-             <div class="glyphicon glyphicon-star"></div>  View {{title}}
-            </a>
+            <br>
+              <a href="{{externalLink}}" class="navbar-btn project-link btn-success btn">
+               <div class="glyphicon glyphicon-star"></div>  View {{title}}
+              </a>
           {% endif %}
           {% for piclink in imagesLinks %}
-          <br><br>
-          	<img class="project-images" src="../static/img/{{piclink}}">
+            <br><br>
+            <img class="project-images" src="../static/img/{{piclink}}">
           {% endfor %}
+          <br>
+          <a href="/" >
+            <span id="home-btn" class="btn-default btn">
+              <div class="glyphicon glyphicon-home"></div>      Return Home</span>
+          </a>
+        </div>
+        
 
           <!-- comments -->
          <div id="disqus_thread"></div>

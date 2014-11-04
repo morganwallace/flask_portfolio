@@ -121,3 +121,18 @@ body{
 .project-images{
 	max-width: 100%;
 }
+
+#content-box{
+	/* border: 1px solid #c0bfbf; */
+/* 	background-color: lightgrey; */
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	border-radius: 3px;
+	box-shadow: 0px 0px 25px rgba(0,0,0,0.6)
+}
+/*
+.container-fluid{
+	background-color: rgb(79, 80, 89);
+}
+*/
