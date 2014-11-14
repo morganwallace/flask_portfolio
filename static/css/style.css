@@ -1,8 +1,8 @@
-#wrap{
+/*#wrap{
 	margin-top: 50px;
 }
 
-
+*/
 
 body{
 	/*margin-top: 70px;*/
@@ -54,13 +54,11 @@ body{
 	font-weight: 300;
 }
 
-#about{
-	color: white;
-}
+
 
 #projectsViewer{
 	background-color: white;
-	margin-top: 200px;
+	margin-top: 500px;
 	/*box-shadow: 0px 0px 26px black;*/
 	margin-bottom: 30px;
 	padding-right: 0;
@@ -130,6 +128,14 @@ body{
 	padding: 20px;
 	border-radius: 3px;
 	box-shadow: 0px 0px 25px rgba(0,0,0,0.6)
+}
+
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 75px;
+    height: 75px;
+    padding-top: 0;
+    font-size: 20px;
 }
 /*
 .container-fluid{

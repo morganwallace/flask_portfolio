@@ -16,7 +16,7 @@ $("#add-project").submit(function(){
 	// return false
   })
 
-$("#bg").hide();
+
 
 $(window).load(function() {    
 	

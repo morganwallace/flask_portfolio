@@ -13,41 +13,43 @@
 
 </style>
 
-	<img id="bg" src='../static/img/longface.jpg' >
+	<img id="bg" src='../static/img/morganatwork.jpg' >
 
 <div class="container-fluid">
 	<div  class="row">
-		<div class="col-sm-6 col-sm-offset-1" id="projectsViewer">
-			<h2 id="projects">Projects</h2>
-			<ul id="projectsList">
-				{% for project in projectsList %}
-					
-					<li class="row">
-						<a href="/project/{{project.title.lower().replace(' ','-')}}">
-							<div class="description ">
-								<div class="description_content">
-									<div class="row project-header">
-										<h3 class="col-sm-8">{{project.title}}</h3>
-										<p class="col-sm-4 dates">{{project.date}}</p>
+		<div >
+			<div class="col-sm-6 col-sm-offset-3" id="projectsViewer">
+				<h2 id="projects">Projects</h2>
+				<ul id="projectsList">
+					{% for project in projectsList %}
+						
+						<li class="row">
+							<a href="/project/{{project.title.lower().replace(' ','-')}}">
+								<div class="description ">
+									<div class="description_content">
+										<div class="row project-header">
+											<h3 class="col-sm-8">{{project.title}}</h3>
+											<p class="col-sm-4 dates">{{project.date}}</p>
+										</div>
+										<p>{{project.snippet}}</p>
 									</div>
-									<p>{{project.snippet}}</p>
 								</div>
+								<img class="projectPic " src="{{project.imagesLinks}}">
+							</a>
+							<div class="tags">
+								{% for tag in project.tags %}
+									<!-- <span class="col-sm-6"> -->
+										<a href="/tags/{{tag}}">
+											<span class="label label-default">{{tag}}</span>
+										</a>
+									<!-- </span> -->
+								{% endfor %}
 							</div>
-							<img class="projectPic " src="{{project.imagesLinks}}">
-						</a>
-						<div class="tags">
-							{% for tag in project.tags %}
-								<!-- <span class="col-sm-6"> -->
-									<a href="/tags/{{tag}}">
-										<span class="label label-default">{{tag}}</span>
-									</a>
-								<!-- </span> -->
-							{% endfor %}
-						</div>
-					</li>
-					
-				{% endfor %}
-			</ul>
+						</li>
+						
+					{% endfor %}
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>
