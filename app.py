@@ -93,9 +93,10 @@ def project(title):
         projectType=myproject[2],
         tags=myproject[3].split(","),
         externalLink=myproject[4],
-        imagesLinks=myproject[5].split(","),
+        imagesLinks=myproject[5].split(",")[1:],
         pageTitle=title+" - Morgan Wallace",
         date=date.fromtimestamp(myproject[6]*24*3600).strftime("%b %d, %Y"),
+        coverphoto=myproject[5].split(",")[0],
         )   
 
 
