@@ -17,7 +17,7 @@ app.config.from_object('config')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
 
 ####### Database classes/schema
-from manage import db, User, Project
+from manage import db, Project
 
 
 @app.route('/')

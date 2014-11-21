@@ -13,40 +13,6 @@ migrate = Migrate(app, db)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    firstname = db.Column(db.String(80))
-    lastname = db.Column(db.String(80))
-    email = db.Column(db.String(120), unique=True)
-    picture_url=db.Column(db.String(120))
-    username=db.Column(db.String(80))
-    password=db.Column(db.String(80))
-
-    def __init__(self, firstname, lastname, email, username,password,picture_url=None):
-        self.firstname = firstname
-        self.lastname = firstname
-        self.email = email
-        # self.my_id=my_id
-        self.picture_url=picture_url
-        self.username=username
-        self.password = password
-
-    def is_authenticated(self):
-        return True
-
-    def is_active(self):
-        return True
-
-    def is_anonymous(self):
-        return False
-
-    def get_id(self):
-        return unicode(self.id)
-
-
-    def __repr__(self):
-        return '<ROW with label: User ID %r>' % self.id
-
 
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -80,22 +46,7 @@ class Project(db.Model):
         return '<ROW with label: project ID %r>' % self.id
 
 
-class Comment(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id =db.Column(db.Integer)
-    project_id = db.Column(db.Integer)
-    body = db.Column(db.Text)
-    created_on = db.Column(db.DateTime, default=db.func.now())
-    updated_on = db.Column(db.DateTime, default=db.func.now(), onupdate=db.func.now())
 
-
-    def __init__(self, user_id, project_id,body):
-        self.user_id=user_id
-        self.project_id=project_id
-        self.body=body
-
-    def __repr__(self):
-        return '<ROW with label: Comment ID %r>' % self.id
 
 if __name__ == '__main__':
     manager.run()
