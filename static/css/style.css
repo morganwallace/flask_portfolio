@@ -4,12 +4,16 @@
 
 */
 
+html{
+	background-color: lightgray;
+
+}
+
 body{
 	/*margin-top: 70px;*/
 	padding-top: 50px;
 	overflow-x: hidden; 
 	color: grey;
-	/*background-color: black;*/
 }
 
 #footer{
@@ -36,34 +40,51 @@ body{
 .bgheight { height: 100%; }
 /*.bgheightmini{height: }*/
 
+#cover-photo{
+	max-height: 400px;
+}
+
 .projectPic{
 	max-width: 90%;
 	max-height: 300px;
+}
+
+#profilePic{
+	width: 90%;
+	max-width: 200px;
 }
 
 .navbar-brand{
 	font-size: 15px;
 	font-weight: 100;
 }
-.navbar,h1,h2,h3,h4,h5,h6,p{
-	/*font-family: monospace;*/
+h1,h2,h3,h4,h5,h6,p{
+/* 	font-family: monospace; */
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   /*font-weight: 300;*/
 	color: black;
 }
 
 .navbar-collapse ul{
-	font-weight: 300;
+	font-weight: 100;
 }
 
 
 
 #projectsViewer{
 	background-color: white;
-	margin-top: 500px;
+	margin-top: 25px;
 	/*box-shadow: 0px 0px 26px black;*/
 	margin-bottom: 30px;
 	padding-right: 0;
 	padding-left: 20px;
 }
+#aboutcolumn{
+	border-left: 1px inset #7e7e7e;
+	border-bottom-color: lightgray;
+	margin-top: 30px;
+}
+
 .tags{
 	/*margin-left: 15px;*/
 	margin-top: 5px;
@@ -107,8 +128,13 @@ body{
 */
 	margin: 15px;
 }
+
+#projectsList .li:hover{
+	text-decoration: underline;
+}
+
 .navbar{
-	opacity: .8;
+	opacity: .9;
 	/*position: absolute;*/
 }
 

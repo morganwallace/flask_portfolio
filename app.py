@@ -82,21 +82,28 @@ def add_project():
 @app.route('/project/<title>')
 def project(title):
     title=title.replace("-"," ")
-    myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks,Project.date).filter(Project.title==title.lower()).first()
+    myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks,Project.date,Project.cover_photo,Project.codeLink).filter(Project.title==title.lower()).first()
     app.logger.debug(myproject)
     app.logger.debug(title)
     title=str(myproject[0]).title()
     app.logger.debug(myproject[5].split(","))
+    if myproject[7]!=None:
+        coverphoto= myproject[7].split(",")
+    else:
+        coverphoto=None
+
+    print myproject[8]
     return render_template('project.html',
         title=title, 
         body=myproject[1],
         projectType=myproject[2],
         tags=myproject[3].split(","),
         externalLink=myproject[4],
-        imagesLinks=myproject[5].split(",")[1:],
+        imagesLinks=myproject[5].split(","),
         pageTitle=title+" - Morgan Wallace",
         date=date.fromtimestamp(myproject[6]*24*3600).strftime("%b %d, %Y"),
-        coverphoto=myproject[5].split(",")[0],
+        coverphoto=coverphoto,
+        codelink=myproject[8]
         )   
 
 
@@ -105,7 +112,6 @@ def tag(tag):
     projects=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks,Project.snippet,Project.date).filter(Project.tags.contains(tag)).all()
     # projects=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks).filter(.all()    
     projectsList=[]
-
     for proj in projects:
         # app.logger.debug(proj[7])
         projectsList.append({
@@ -114,7 +120,7 @@ def tag(tag):
             'projectType':proj[2],
             'tags':proj[3].split(","),
             'externalLink':proj[4],
-            'imagesLinks':url_for('static',filename='img/'+proj[5].split()[0]), #only take first photo
+            'imagesLinks':url_for('static',filename='img/'+proj[5].split(",")[0]), #only take first photo
             'snippet':proj[6],
             'date':date.fromtimestamp(proj[7]*24*3600).strftime("%d %b %Y"),
             'timestamp':proj[7],

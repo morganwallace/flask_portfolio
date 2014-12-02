@@ -3,8 +3,9 @@
 {% block content %}
 <div class="container-fluid">
   <div class="row">
-    <img src="../static/img/{{coverphoto}}" id="cover-photo">
-
+    {% if coverphoto %}
+      <img src="../static/img/{{coverphoto}}" id="cover-photo">
+    {% endif %}
     <div class="col-md-8 col-md-offset-2 main">
         
         <div id="content-box">
@@ -27,8 +28,14 @@
           <p>{{body}}</p>
           {% if externalLink %}
             <br>
-              <a href="{{externalLink}}" class="navbar-btn project-link btn-success btn">
+              <a href="{{externalLink}}" class="navbar-btn project-link btn-success btn" >
                <div class="glyphicon glyphicon-star"></div>  View {{title}}
+              </a>
+          {% endif %}
+          {% if codelink %}
+            <br>
+              <a href="{{codelink}}" class="navbar-btn code-link btn-info btn" >
+               <div class="glyphicon glyphicon-off"></div>  View code
               </a>
           {% endif %}
           {% for piclink in imagesLinks %}

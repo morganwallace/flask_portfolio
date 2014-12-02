@@ -13,12 +13,12 @@
 
 </style>
 
-	<img id="bg" src='../static/img/morganatwork.jpg' >
+	<!-- <img id="bg" src='../static/img/morganatwork.jpg' > -->
 
 <div class="container-fluid" id='content'>
-	<div  class="row">
+	<div  class="row" id="projectsViewer">
 		<div >
-			<div class="col-sm-6 col-sm-offset-3" id="projectsViewer">
+			<div class="col-sm-6 col-sm-offset-1" >
 				<h2 id="projects">Projects</h2>
 				<ul id="projectsList">
 					{% for project in projectsList %}
@@ -49,6 +49,11 @@
 						
 					{% endfor %}
 				</ul>
+			</div>
+			<div class="col-sm-3 col-sm-offset-1" id="aboutcolumn">
+				
+				<img id='profilePic' src="/static/img/Profile_square.jpg">
+				<p>Morgan is an entrepreneur and software developer in the San Francisco Bay Area. He recently graduated from UC Berkeley's School of Information with a Masters in Information Management and Systems.</p>
 			</div>
 		</div>
 	</div>
