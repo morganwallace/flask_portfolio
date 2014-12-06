@@ -15,49 +15,47 @@
 
 	<!-- <img id="bg" src='../static/img/morganatwork.jpg' > -->
 
-<div class="container-fluid" id='content'>
-	<div  class="row">
-		<div >
-			<div class="col-sm-6 col-sm-offset-1" id="projectsViewer">
-				<h2 id="projects">Projects</h2>
-				<ul id="projectsList">
-					{% for project in projectsList %}
-						
-						<li class="row">
-							<a href="/project/{{project.title.lower().replace(' ','-')}}">
-								<div class="description ">
-									<div class="description_content">
-										<div class="row project-header">
-											<h3 class="col-sm-8">{{project.title}}</h3>
-											<p class="col-sm-4 dates">{{project.date}}</p>
-										</div>
-										<p>{{project.snippet}}</p>
-									</div>
-								</div>
-								<img class="projectPic " src="{{project.imagesLinks}}">
-							</a>
-							<div class="tags">
-								{% for tag in project.tags %}
-									<!-- <span class="col-sm-6"> -->
-										<a href="/tags/{{tag}}">
-											<span class="label label-default">{{tag}}</span>
-										</a>
-									<!-- </span> -->
-								{% endfor %}
+<div class="col-sm-6 col-sm-offset-1" id="projectsViewer">
+
+	
+
+<!-- 				<h2 id="projects">Projects</h2> -->
+	<ul id="projectsList">
+		{% for project in projectsList %}
+			
+			<li class="row">
+				<a href="/project/{{project.title.lower().replace(' ','-')}}">
+					<div class="description ">
+						<div class="description_content">
+							<div class="row project-header">
+								<h3 class="col-sm-8">{{project.title}}</h3>
+								<p class="col-sm-4 dates">{{project.date}}</p>
 							</div>
-						</li>
-						
+							<p>{{project.snippet}}</p>
+						</div>
+					</div>
+					<img class="projectPic " src="{{project.imagesLinks}}">
+				</a>
+				<div class="tags">
+					{% for tag in project.tags %}
+						<!-- <span class="col-sm-6"> -->
+							<a href="/tags/{{tag}}">
+								<span class="label label-default">{{tag}}</span>
+							</a>
+						<!-- </span> -->
 					{% endfor %}
-				</ul>
-			</div>
-			<div class="col-sm-3 col-sm-offset-1" id="aboutcolumn">
-				<!-- <h2>Morgan:</h2> -->
-				<img id='profilePic' src="/static/img/Profile_square.jpg">
-				<p>Morgan is an entrepreneur and software developer in the San Francisco Bay Area. He recently graduated from UC Berkeley's School of Information with a Masters in Information Management and Systems.</p>
-			</div>
-		</div>
-	</div>
+				</div>
+			</li>
+			
+		{% endfor %}
+	</ul>
 </div>
+<div class="col-sm-3 col-sm-offset-1" id="aboutcolumn">
+	<!-- <h2>Morgan:</h2> -->
+	<img id='profilePic' src="/static/img/Profile_square.jpg">
+	<p>Morgan is an entrepreneur and software developer in the San Francisco Bay Area. He recently graduated from UC Berkeley's School of Information with a Masters in Information Management and Systems.</p>
+</div>
+
 
 
 <script type="text/javascript">

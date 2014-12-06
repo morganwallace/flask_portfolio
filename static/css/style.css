@@ -5,19 +5,23 @@
 */
 
 html{
-	background-color: lightgray;
-
+	background-color: #efefef;
 }
 
 body{
-	/*margin-top: 70px;*/
+	/*margin-top: 50px;*/
 	padding-top: 50px;
 	overflow-x: hidden; 
+	/*overflow: hidden;*/
+	background-color: #efefef;
 }
 
 #footer{
 	padding-bottom: 10px;
 	box-shadow: inset 0px 0px 0px black;
+}
+.row{
+	margin-right: 0;
 }
 
 /*#mypic{
@@ -81,7 +85,7 @@ h1,h2,h3,h4,h5,h6,p{
 
 #projectsViewer, #aboutcolumn{
 	background-color: white;
-	margin-top: 30px;
+	margin-top: 0px;
 	background-color: white;
 }
 
@@ -152,8 +156,8 @@ h1,h2,h3,h4,h5,h6,p{
 
 #content-box{
 	/* border: 1px solid #c0bfbf; */
-/* 	background-color: lightgrey; */
-	margin-top: 40px;
+ 	background-color: white; 
+	/*margin-top: 40px;*/
 	margin-bottom: 20px;
 	padding: 20px;
 	border-radius: 3px;
@@ -167,8 +171,29 @@ h1,h2,h3,h4,h5,h6,p{
     padding-top: 0;
     font-size: 20px;
 }
-/*
-.container-fluid{
-	background-color: rgb(79, 80, 89);
+
+#menu{
+	list-style: none;
+	padding-left: 0px;
+	background-color: white;
+	margin-top: 10px;
 }
-*/
+#menu li{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+	font-size: 20px;
+	/*font-weight: 100;*/
+
+}
+#menu a{
+	color: black;
+}
+
+#menu li:hover{
+	background-color: lightgrey;
+}
+
+#menu .active{
+	border-bottom: 3px solid black;
+}

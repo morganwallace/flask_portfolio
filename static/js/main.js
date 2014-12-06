@@ -84,7 +84,17 @@ $(window).load(function() {
 });
 
 $(document).ready(function(){
-	
+
+	//add the bottom border to the correct menu item
+	if (window.location.pathname=='/blog') {
+		$("#menu-blog").addClass('active');
+	}
+	else if(window.location.pathname=='/about'){
+		$("#menu-about").addClass('active');	
+	}
+	else{
+		$("#menu-project").addClass('active');
+	};
 	// if ($(".project-link").attr('href').search('github')attr('href').search('github')>0){
 	// 	$(".project-link").text('Source code on GitHub');
 	// }

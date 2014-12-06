@@ -68,9 +68,25 @@
       {% endif %}
     {% endwith %}
     
+
+<div class="container-fluid" id='content'>
+  
+  <div  class="row">
+    <ul id='menu' class="row">
+      <a href="/">
+        <li class="col-xs-4" id="menu-project">Projects</li>
+      </a>
+      <a href='/blog'>
+        <li class="col-xs-4" id='menu-blog'>Blog</li>
+      </a>
+      <a href="/about">
+        <li class="col-xs-4" id="menu-about">About</li>
+      </a>
+    </ul>
   
     {% block content %}{% endblock %}
-
+  </div>
+</div>
 
 <!--     <div class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">

@@ -27,7 +27,7 @@ def home():
     projectsList=[]
 
     for proj in projects:
-        app.logger.debug(proj[5].split(",")[0])
+        # app.logger.debug(proj[5].split(",")[0])
         projectsList.append({
             'title':str(proj[0]).title(),
             'body':proj[1],
@@ -69,6 +69,8 @@ def add_project():
         imagesLinks=request.form['imagesLinks'],
         snippet=request.form['snippet'],
         date=int(time.mktime(time.strptime(request.form['date'],"%m/%d/%Y")))/3600/24,
+        cover_photo=request.form['coverphoto'],
+        codeLink=request.form['codelink']
         )
     # time.strptime(request.form['date'],"%m/%d/%Y")
     db.session.add(project)
@@ -77,7 +79,13 @@ def add_project():
     resp = make_response(jsonify(success=True,title=request.form['title']))
     return resp
 
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 @app.route('/project/<title>')
 def project(title):
