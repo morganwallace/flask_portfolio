@@ -48,13 +48,15 @@ body{
 }
 
 .projectPic{
-	max-width: 90%;
-	max-height: 300px;
+	max-width: 95%;
+	max-height: 350px;
 }
 
 #profilePic{
 	width: 90%;
 	max-width: 200px;
+	border-radius: 50%;
+	margin: auto;
 }
 
 .navbar-brand{
@@ -91,11 +93,19 @@ h1,h2,h3,h4,h5,h6,p{
 
 #aboutcolumn{
 	padding-top: 20px;
+	text-align: center;
+}
+#aboutcolumn p{
+	text-align: left;
 }
 
 .tags{
 	/*margin-left: 15px;*/
 	margin-top: 5px;
+	text-align: left;
+}
+.tags a{
+	margin-bottom: 15px;
 }
 .tags a:hover{
     text-decoration: none;
@@ -135,6 +145,10 @@ h1,h2,h3,h4,h5,h6,p{
 	margin-right: 5px;
 */
 	margin: 15px;
+	text-align: center;
+}
+#projectsList li .description{
+	text-align: left;
 }
 
 #projectsList .li:hover{
