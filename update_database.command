@@ -5,4 +5,4 @@ python manage.py db migrate
 python manage.py db upgrade
 echo 'Done... Manually verify using pgSQL'
 heroku pg:psql
-\d
+

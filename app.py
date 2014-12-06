@@ -87,6 +87,10 @@ def blog():
 def about():
     return render_template('about.html')
 
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
+
 @app.route('/project/<title>')
 def project(title):
     title=title.replace("-"," ")
