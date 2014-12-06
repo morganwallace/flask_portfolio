@@ -99,6 +99,12 @@ h1,h2,h3,h4,h5,h6,p{
 	text-align: left;
 }
 
+.about-content{
+	text-align: center;
+}
+.about-content p{
+	text-align: left;
+}
 .tags{
 	/*margin-left: 15px;*/
 	margin-top: 5px;
