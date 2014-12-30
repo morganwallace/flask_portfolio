@@ -195,8 +195,9 @@ h1,h2,h3,h4,h5,h6,p{
 #menu{
 	list-style: none;
 	padding-left: 0px;
-	background-color: white;
+	/*background-color: white;*/
 	margin-top: 10px;
+	
 }
 #menu li{
 	padding-top: 15px;
