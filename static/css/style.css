@@ -86,9 +86,8 @@ h1,h2,h3,h4,h5,h6,p{
 }
 
 #projectsViewer, #aboutcolumn{
-	background-color: white;
 	margin-top: 0px;
-	background-color: white;
+	/*background-color: white;*/
 }
 
 #aboutcolumn{
@@ -145,12 +144,14 @@ h1,h2,h3,h4,h5,h6,p{
 	/*width: 300px;*/
 	padding-bottom: 5px;
 	border-bottom: 1px inset #c7c7c7;
+	background-color: white;
 /*
 	margin-bottom: 5px;
 	margin-left: 5px;
 	margin-right: 5px;
 */
-	margin: 15px;
+	padding: 15px;
+	margin-bottom: 10px;
 	/*text-align: center;*/
 }
 #projectsList li .description{
@@ -197,7 +198,7 @@ h1,h2,h3,h4,h5,h6,p{
 	padding-left: 0px;
 	/*background-color: white;*/
 	margin-top: 10px;
-	
+
 }
 #menu li{
 	padding-top: 15px;
