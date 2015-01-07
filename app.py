@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import session, request, make_response, jsonify, flash, url_for, redirect,g
 from flask.ext.sqlalchemy import SQLAlchemy
+# from flask.ext.images import Images, resized_img_src
 # from functools import wraps
 # from flask.ext.login import login_user, LoginManager, logout_user, current_user, login_required
 # from flask.ext.openid import OpenID
@@ -13,12 +14,19 @@ app = Flask(__name__)
 
 # Loads configuration from `config.py`
 app.config.from_object('config')
-
+app.secret_key = 'ManorVail' 
+# images = Images(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
 
 ####### Database classes/schema
 from manage import db, Project
 
+
+
+# from flask.ext.resize import Resize
+app = Flask(__name__)
+# app.config.from_pyfile('config.py')
+# resize = Resize(app)
 
 @app.route('/')
 def home():
@@ -28,6 +36,12 @@ def home():
 
     for proj in projects:
         # app.logger.debug(proj[5].split(",")[0])
+        imgURL=url_for('static',filename='img/'+proj[5].split(",")[0]) #only take first photo
+        app.logger.debug(imgURL)
+        # imgURL=proj[5].split(",")[0] #only take first photo
+        # kwargs = {'height':350}
+        # images.build_url(imgURL,**kwargs)
+        # kwargs[key] = value
         projectsList.append({
             'title':str(proj[0]).title(),
             'body':proj[1],
@@ -86,6 +100,10 @@ def blog():
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+@app.route('/ravelry')
+def ravelry():
+    return render_template('ravelry.html')
 
 @app.route('/admin')
 def admin():

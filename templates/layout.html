@@ -41,11 +41,13 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             
-           <li><a href="http://www.linkedin.com/in/morganmwallace" target="_blank">LinkedIn</a></li>
-            <li><a href="http://www.twitter.com/wallacemorgan" target="_blank">Twitter</a></li>
 
+            <li  id="menu-project"><a href="/">Projects</a></li>
+            <li  id='menu-blog'><a href='/blog'>Blog</a></li>
+            <li  id="menu-about"><a href="/about">About</a></li>
+            <li><a href="http://www.linkedin.com/in/morganmwallace" target="_blank">LinkedIn</a></li>
+            <li><a href="http://www.twitter.com/wallacemorgan" target="_blank">Twitter</a></li>
             <li><a href="http://www.github.com/morganwallace" target="_blank">Github</a></li>
-            <!-- <li><a href="#">Help</a></li> -->
           </ul>
           <!-- <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -72,17 +74,10 @@
   
   <div  class="row">
     <ul id='menu' class="row">
-      <a href="/">
-        <li class="col-xs-offset-3 col-xs-2" id="menu-project">Projects</li>
-      </a>
-      <a href='/blog'>
-        <li class="col-xs-2" id='menu-blog'>Blog</li>
-      </a>
-      <a href="/about">
-        <li class="col-xs-2" id="menu-about">About</li>
-      </a>
+      
     </ul>
-  
+
+<img src="static/img/raindrops.jpg" id="bg">
     {% block content %}{% endblock %}
   </div>
 </div>

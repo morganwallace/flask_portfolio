@@ -213,10 +213,11 @@ h1,h2,h3,h4,h5,h6,p{
 	color: black;
 }
 
-#menu li:hover{
+.navbar li:hover{
 	background-color: lightgrey;
 }
 
-#menu .active{
-	border-bottom: 3px solid black;
+.active{
+	border-bottom-style: solid;
+	border-color: rgb(122, 255, 158);
 }
