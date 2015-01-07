@@ -214,8 +214,10 @@ h1,h2,h3,h4,h5,h6,p{
 }
 
 .navbar li:hover{
-	background-color: lightgrey;
+	/*background-color: lightgrey;*/
+	color: white;
 }
+
 
 .active{
 	border-bottom-style: solid;

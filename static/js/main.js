@@ -95,6 +95,14 @@ $(document).ready(function(){
 	else{
 		$("#menu-project").addClass('active');
 	};
+
+	$(".navbar li").hover(function(){
+		// $("#menu-project").removeClass('active');
+		$(this).toggleClass('menu-hover');
+		// console.log('hovered');
+	},function(){
+		$(this).toggleClass('menu-hover');
+	})
 	// if ($(".project-link").attr('href').search('github')attr('href').search('github')>0){
 	// 	$(".project-link").text('Source code on GitHub');
 	// }
