@@ -37,7 +37,7 @@ def home():
     for proj in projects:
         # app.logger.debug(proj[5].split(",")[0])
         imgURL=url_for('static',filename='img/'+proj[5].split(",")[0]) #only take first photo
-        app.logger.debug(imgURL)
+        # app.logger.debug(imgURL)
         # imgURL=proj[5].split(",")[0] #only take first photo
         # kwargs = {'height':350}
         # images.build_url(imgURL,**kwargs)
@@ -169,6 +169,27 @@ def not_found_error(error):
     return render_template('404.html'), 404
 
 
+def addh2fx(mylist):
+    '''convenience function to '''
+    l=mylist.split("\n")
+    
+    for i in range(len(l)):
+        l[i]="<h2>"+l[i]+"</h2>\n"
+    return l
+
+
+@app.route('/addh2',methods=['POST','GET'])
+# @login_required
+def addh2():
+    print request.method
+    if request.method=='POST':
+
+        rawtext=request.form['rawtext']
+        formatted=addh2fx(rawtext)
+        app.logger.debug(formatted)
+        resp = make_response(jsonify(success=True,title=request.form['rawtext']))
+        return render_template('addh2.html', formatted=formatted)
+    return render_template('addh2.html')
 
 
 if __name__ == '__main__':
