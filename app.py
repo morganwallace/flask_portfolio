@@ -169,27 +169,28 @@ def not_found_error(error):
     return render_template('404.html'), 404
 
 
-def addh2fx(mylist):
+def addtagfx(mylist, tag):
     '''convenience function to '''
     l=mylist.split("\n")
     
     for i in range(len(l)):
-        l[i]="<h2>"+l[i]+"</h2>\n"
+        l[i]="<"+tag+">"+l[i].strip()+"</"+tag+">\n"
     return l
 
 
-@app.route('/addh2',methods=['POST','GET'])
+@app.route('/taglist',methods=['POST','GET'])
 # @login_required
-def addh2():
+def taglist():
     print request.method
     if request.method=='POST':
 
         rawtext=request.form['rawtext']
-        formatted=addh2fx(rawtext)
+        tag=request.form['tag']
+        formatted=addtagfx(rawtext, tag)
         app.logger.debug(formatted)
         resp = make_response(jsonify(success=True,title=request.form['rawtext']))
-        return render_template('addh2.html', formatted=formatted)
-    return render_template('addh2.html')
+        return render_template('taglist.html', formatted=formatted)
+    return render_template('taglist.html')
 
 
 if __name__ == '__main__':

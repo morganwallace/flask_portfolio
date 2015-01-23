@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 main">
+		
+		{% if formatted %}
+		<h3>Your formatted list:</h3>
+			<div style="background-color: white; padding:15px">
+				{% for item in formatted %}
+					<p>{{item}}</p>
+				{% endfor %}
+			</div>
+		{% endif %}
+		<h3>enter list</h3>
+	      <form id='add-project form-horizontal' action="/taglist" method="post">
+	          <textarea type="textarea" rows="15" name="rawtext" class="form-control" placeholder="List text (without '<h2>...</h2>')"  ></textarea>
+	          <label>
+	          	<select name='tag'>
+				  <option value="h1">h1</option>
+				  <option value="h2">h2</option>
+				  <option value="h3">h3</option>
+				  <option value="p">p</option>
+				</select>
+	          </label>
+	          <br>
+	          <input type="submit" value="Add html tags">
+	      </form>
+	    </div>
+	</div>
+</div>
+{% endblock %}
