@@ -3,6 +3,9 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
 import os
+from datetime import datetime
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
@@ -49,22 +52,29 @@ class Project(db.Model):
 # Create user model.
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(100))
-    last_name = db.Column(db.String(100))
+    firstname = db.Column(db.String(100))
+    lastname = db.Column(db.String(100))
     login = db.Column(db.String(80), unique=True)
     username = db.Column('username', db.String(20), unique=True , index=True)
     password = db.Column('password' , db.String(10))
     email = db.Column('email',db.String(50),unique=True , index=True)
     registered_on = db.Column('registered_on' , db.DateTime)
 
-    def __init__():
-        self.first_name=first_name
-        self.last_name=last_name
-        self.login=login
+    def __init__(self , username ,password , email,firstname,lastname):
+        self.firstname=firstname
+        self.lastname=lastname
         self.username=username
-        self.password=password
+        self.password=self.set_password(password) 
         self.email=email
-        self.registered_on = datetime.utcnow()        
+        self.registered_on = datetime.utcnow()  
+
+    ### secure passwords    
+    def set_password(self, password):
+        return generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.pw_hash, password) 
+
 
     # Flask-Login integration
     def is_authenticated(self):
