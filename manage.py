@@ -46,6 +46,42 @@ class Project(db.Model):
         return '<ROW with label: project ID %r>' % self.id
 
 
+# Create user model.
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(100))
+    last_name = db.Column(db.String(100))
+    login = db.Column(db.String(80), unique=True)
+    username = db.Column('username', db.String(20), unique=True , index=True)
+    password = db.Column('password' , db.String(10))
+    email = db.Column('email',db.String(50),unique=True , index=True)
+    registered_on = db.Column('registered_on' , db.DateTime)
+
+    def __init__():
+        self.first_name=first_name
+        self.last_name=last_name
+        self.login=login
+        self.username=username
+        self.password=password
+        self.email=email
+        self.registered_on = datetime.utcnow()        
+
+    # Flask-Login integration
+    def is_authenticated(self):
+        return True
+
+    def is_active(self):
+        return True
+
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        return self.id
+
+    # Required for administrative interface
+    def __unicode__(self):
+        return self.username
 
 
 if __name__ == '__main__':
