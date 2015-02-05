@@ -60,12 +60,11 @@
      
     {% with messages = get_flashed_messages() %}
       {% if messages %}
+        <ul>
         {% for message in messages %}
-          <div class="alert alert-warning fade in">
-            <a class="close" data-dismiss="alert">&times;</a>
-            {{ message }}
-          </div>
+            <li>{{ message }} </li>
         {% endfor %}
+        </ul>
       {% endif %}
     {% endwith %}
     
@@ -77,7 +76,7 @@
       
     </ul>
 
-<img src="static/img/raindrops.jpg" id="bg">
+
     {% block content %}{% endblock %}
   </div>
 </div>
