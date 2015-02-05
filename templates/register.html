@@ -1,7 +1,21 @@
-{% extends "layout.html" %}
-{% block body %}
+{% extends 'layout.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
   <form action="" method=post class="form-horizontal">
-    <h2>Sign up for FlaskLogin(Todo) Application </h2>
+    <h2>Sign up for MorganWallace.com </h2>    <div class="control-group">
+        <div class="controls">
+          <input type="text" id="firstname" name="firstname" class="input-xlarge"
+            placeholder="Enter First Name" value="{{ request.form.firstname }}"
+            required>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+          <input type="text" id="lastname" name="lastname" class="input-xlarge"
+            placeholder="Enter Last Name" value="{{ request.form.lastname }}"
+            required>
+        </div>
+    </div>
     <div class="control-group">
         <div class="controls">
           <input type="text" id="username" name="username" class="input-xlarge"
