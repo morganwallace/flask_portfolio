@@ -35,6 +35,7 @@ def login():
         return render_template('login.html')
     username = request.form['username']
     password = request.form['password']
+    app.logger.debug(request.form)
     remember_me = False
     if 'remember_me' in request.form:
         remember_me = True
@@ -42,7 +43,7 @@ def login():
     if registered_user is None or check_password_hash(registered_user.password,password) is False:
         flash('Username or Password is invalid' , 'error')
         return redirect(url_for('login'))
-    login_user(registered_user)
+    login_user(registered_user, remember = remember_me)
     flash('Logged in successfully')
     return redirect(request.args.get('next') or url_for('home'))
 
