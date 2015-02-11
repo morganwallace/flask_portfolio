@@ -1,30 +1,15 @@
 {% extends 'layout.html' %}
 {% block title %}Login{% endblock %}
 {% block content %}
-<!-- <img src="static/img/mountain.jpg" id="bg"> -->
-<style type="text/css">
-	body{
-		margin-top: 0px;
-		margin-left: 0;
-		margin-right: 0;
-	}
-	.navbar{
-		margin-bottom: 0;
-	}
 
-</style>
 
-	<!-- <img id="bg" src='../static/img/morganatwork.jpg' > -->
+<div class="col-sm-6" id="projectsViewer">
 
-<div class="col-sm-6 col-sm-offset-1" id="projectsViewer">
 
-	
-
-<!-- 				<h2 id="projects">Projects</h2> -->
 	<ul id="projectsList">
 		{% for project in projectsList %}
 			
-			<li class="row">
+			<li class="row card">
 				<a href="/project/{{project.title.lower().replace(' ','-')}}">
 					<div class="description ">
 						<div class="description_content">
@@ -52,7 +37,7 @@
 		{% endfor %}
 	</ul>
 </div>
-<div class="col-sm-3 col-sm-offset-1" id="aboutcolumn">
+<div class="col-sm-5 col-sm-offset-1 card" id="aboutcolumn">
 	<!-- <h2>Morgan:</h2> -->
 	<a href="/about"><img id='profilePic' src="/static/img/Profile_square.jpg"></a>
 	<p>Morgan is an entrepreneur and software developer in the San Francisco Bay Area. He recently graduated from UC Berkeley's School of Information with a Masters in Information Management and Systems. <a href='/about'>Learn more</a></p>

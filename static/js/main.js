@@ -18,6 +18,7 @@ $("#add-project").submit(function(){
 
 
 
+
 $(window).load(function() {    
 	
 	var theWindow        = $(window),
@@ -25,9 +26,6 @@ $(window).load(function() {
 	    aspectRatio      = $bg.width() / $bg.height();
     var topImageArea= 200+$(".navbar").height();
 
-	// $("#projectsViewer").css(
-	// 	"margin-top",theWindow.height()-400
-	// )
 	    			    		
 	function resizeBg() {
 		//if in mobile view
@@ -92,6 +90,13 @@ $(document).ready(function(){
 	else if(window.location.pathname=='/about'){
 		$("#menu-about").addClass('active');	
 	}
+	else if(window.location.pathname=='/login'){
+		console.log('working?')
+		$("#menu-login").addClass('active');	
+	}
+	else if(window.location.pathname=='/register'){
+		$("#menu-register").addClass('active');	
+	}
 	else{
 		$("#menu-project").addClass('active');
 	};
@@ -103,6 +108,16 @@ $(document).ready(function(){
 	},function(){
 		$(this).toggleClass('menu-hover');
 	})
+
+
+	  // close messages
+	  $(".messages").click(function(){
+	    console.log('stuff');
+	    $(this).slideUp();
+
+	  })
+
+
 	// if ($(".project-link").attr('href').search('github')attr('href').search('github')>0){
 	// 	$(".project-link").text('Source code on GitHub');
 	// }

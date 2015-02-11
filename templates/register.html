@@ -1,8 +1,7 @@
 {% extends 'layout_admin.html' %}
-{% block title %}Login{% endblock %}
-{% block content %}
+{% block admin %}
   <form id='signupForm' action="" method=post class="form-horizontal">
-    <h2>Sign up for MorganWallace.com </h2>    <div class="control-group">
+    <h2>Register/signup for an account</h2>    <div class="control-group">
         <div class="controls">
           <input type="text" id="firstname" name="firstname" class="input-xlarge"
             placeholder="Enter First Name" value="{{ request.form.firstname }}"

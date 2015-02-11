@@ -27,8 +27,9 @@
   <script src="../static/js/jquery.min.js"></script>
   <body>
 
-    <div class="navbar navbar-inverse" role="navigation">
-      <div class="container-fluid">
+    <!-- <div class="navbar navbar-inverse" role="navigation"> -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -45,15 +46,18 @@
             <li  id="menu-project"><a href="/">Projects</a></li>
             <li  id='menu-blog'><a href='/blog'>Blog</a></li>
             <li  id="menu-about"><a href="/about">About</a></li>
-            <li><a href="http://www.linkedin.com/in/morganmwallace" target="_blank">LinkedIn</a></li>
-            <li><a href="http://www.twitter.com/wallacemorgan" target="_blank">Twitter</a></li>
-            <li><a href="http://www.github.com/morganwallace" target="_blank">Github</a></li>
+            <!-- <span id="social-links"> -->
+              <li><a href="http://www.linkedin.com/in/morganmwallace" target="_blank"><img class="nav-icon social-icon" src="../static/img/linkedin.png"></a></li>
+              <li><a href="http://www.twitter.com/wallacemorgan" target="_blank"><img src="../static/img/twitter.svg" class="nav-icon social-icon"></a></li>
+              <li><a href="http://www.github.com/morganwallace" target="_blank"><img class="nav-icon social-icon" src="../static/img/octocat.svg"></a></li>
+            <!-- </span> -->
+            
             {% if g.user.is_authenticated()%}
-                <li ><a class="login" id="menu-logout" href="{{ url_for('logout') }}">Logout</a></li>
+                <li id="menu-logout"><a class="login"  href="{{ url_for('logout') }}">Logout</a></li>
             {% endif %}
             {% if not g.user.is_authenticated()%}
-                <li ><a class="login" id="menu-login" href="{{ url_for('login') }}">Login</a></li>
-                <li ><a class="login" id="menu-register" href="{{ url_for('register') }}">Register</a></li>
+                <li id="menu-login"><a class="login"  href="{{ url_for('login') }}">Login</a></li>
+                <li id="menu-register"><a class="login"  href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
           </ul>
           <!-- <form class="navbar-form navbar-right">
@@ -67,16 +71,26 @@
      
     {% with messages = get_flashed_messages() %}
       {% if messages %}
-        <ul id="messages">
-        {% for message in messages %}
-            <li class="message">{{ message }} </li>
-        {% endfor %}
-        </ul>
+        <div class="container row">
+          <div class="col-sm-10 col-sm-offset-1 card messages">
+            <!-- <span class="close-messages"> -->
+              <img  id='close-messages' src="../static/img/close.svg">
+            <!-- </span> -->
+            
+            <ul>
+            {% for message in messages %}
+                <li class="message">{{ message }} </li>
+            {% endfor %}
+            </ul>
+          </div>
+            
+        </div>
+
       {% endif %}
     {% endwith %}
     
 
-<div class="container-fluid" id='content'>
+<div class="container" id='content'>
 
           
 

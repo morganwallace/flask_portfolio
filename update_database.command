@@ -3,6 +3,5 @@ cd  "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source venv/bin/activate
 python manage.py db migrate
 python manage.py db upgrade
-echo 'Done... Manually verify using pgSQL'
-heroku pg:psql
+echo 'Done'
 

@@ -14,7 +14,8 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 
-
+# Google Analytics id stored in ENV variable
+gaID=os.environ.get('gaID')
 
 # login setup from tutorial: 
 # https://blog.openshift.com/use-flask-login-to-add-user-authentication-to-your-python-application/
@@ -35,7 +36,6 @@ def login():
         return render_template('login.html')
     username = request.form['username']
     password = request.form['password']
-    app.logger.debug(request.form)
     remember_me = False
     if 'remember_me' in request.form:
         remember_me = True
@@ -80,7 +80,7 @@ def home():
     projectsList= sorted(projectsList, key=lambda k: k['timestamp'])
     projectsList.reverse()
 
-    gaID=os.environ.get('gaID')
+    
     return render_template('index.html',
         projectsList=projectsList,gaID=gaID)
 
@@ -134,6 +134,7 @@ def ravelry():
     return render_template('ravelry.html')
 
 @app.route('/admin')
+@login_required
 def admin():
     return render_template('admin.html')
 

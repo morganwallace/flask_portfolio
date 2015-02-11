@@ -10,7 +10,7 @@ html{
 
 body{
 	/*margin-top: 50px;*/
-	padding-top: 50px;
+	/*padding-top: 50px;*/
 	overflow-x: hidden; 
 	/*overflow: hidden;*/
 	background-color: #efefef;
@@ -54,10 +54,10 @@ body{
 }
 
 #profilePic{
-	width: 90%;
+	/*float: left;*/
 	max-width: 200px;
 	border-radius: 50%;
-	margin: auto;
+	margin-right: 10px;
 }
 
 .navbar-brand{
@@ -72,9 +72,17 @@ h1,h2,h3,h4,h5,h6,p{
 }
 
 .navbar-collapse ul{
-	font-weight: 100;
+	font-weight: 200;
 }
 
+.navbar-toggle{
+	margin-top: 20px;
+}
+
+.nav-icon{
+	height: 30px;
+	margin-top: 25px;
+}
 
 
 #content{
@@ -82,8 +90,7 @@ h1,h2,h3,h4,h5,h6,p{
 	margin-top: 25px;
 	/*box-shadow: 0px 0px 26px black;*/
 	margin-bottom: 30px;
-	padding-right: 0;
-	padding-left: 20px;
+
 }
 
 #projectsViewer, #aboutcolumn{
@@ -125,12 +132,17 @@ h1,h2,h3,h4,h5,h6,p{
 	position: relative;
 }
 
+.project-header h3{
+	margin-top: 0;
+}
+
 .dates{
 	font-weight: 200;
 	color: darkgray;
 	position: absolute;
 	bottom: 0;
 	right: 0;
+	text-align: right;
 }
 
 .description{
@@ -143,18 +155,7 @@ h1,h2,h3,h4,h5,h6,p{
 	padding-left: 0;
 }
 #projectsList li{
-	/*width: 300px;*/
-	padding-bottom: 5px;
-	border-bottom: 1px inset #c7c7c7;
-	background-color: white;
-/*
-	margin-bottom: 5px;
-	margin-left: 5px;
-	margin-right: 5px;
-*/
-	padding: 15px;
-	margin-bottom: 10px;
-	/*text-align: center;*/
+	margin-bottom: 15px;
 }
 #projectsList li .description{
 	text-align: left;
@@ -162,6 +163,16 @@ h1,h2,h3,h4,h5,h6,p{
 
 #projectsList .li:hover{
 	text-decoration: underline;
+}
+
+.card{
+	background-color: white;
+	border: solid;
+	border-width: 1px;
+	border-color: rgb(223, 224, 228);
+	border-radius: 3px;
+	border-bottom: 2px inset #c7c7c7;
+	padding: 20px;
 }
 
 .navbar{
@@ -178,13 +189,8 @@ h1,h2,h3,h4,h5,h6,p{
 }
 
 #content-box{
-	/* border: 1px solid #c0bfbf; */
- 	background-color: white; 
-	/*margin-top: 40px;*/
-	margin-bottom: 20px;
 	padding: 20px;
-	border-radius: 3px;
-	box-shadow: 0px 0px 25px rgba(0,0,0,0.6)
+
 }
 
 .navbar-brand,
@@ -193,6 +199,7 @@ h1,h2,h3,h4,h5,h6,p{
     height: 75px;
     padding-top: 0;
     font-size: 20px;
+
 }
 
 #menu{
@@ -217,10 +224,42 @@ h1,h2,h3,h4,h5,h6,p{
 .navbar li:hover{
 	/*background-color: lightgrey;*/
 	color: white;
+
 }
 
+.menu-hover{
+	border-bottom: solid;
+	border-color: rgba(122, 255, 158, 0.39);
+}
 
 .active{
 	border-bottom-style: solid;
 	border-color: rgb(122, 255, 158);
 }
+
+.login{
+	color: #887667
+}
+
+
+
+.messages{
+	margin-top: 25px;
+	background-color: rgb(209, 240, 209);
+}
+.messages ul{
+	list-style: none;
+	
+}
+
+#close-messages{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 25;
+}
+#close-messages:hover{
+	cursor: pointer;
+	cursor: hand;
+}
+
