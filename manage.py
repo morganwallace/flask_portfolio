@@ -8,6 +8,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 app = Flask(__name__)
+
+# Don't store the DB URI in Source Code. 
+# Set it as environmental variable and fetch it here
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
 
 db = SQLAlchemy(app)
@@ -18,6 +21,7 @@ manager.add_command('db', MigrateCommand)
 
 
 class Project(db.Model):
+    __tablename__ = 'project'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255))
     body = db.Column(db.Text)
@@ -30,6 +34,7 @@ class Project(db.Model):
     date=db.Column(db.Integer)
     codeLink=db.Column(db.String(255))
     cover_photo=db.Column(db.String(255))
+    # user_id=db.Column(db.Integer, db.ForeignKey('user.id'))
     
 
     def __init__(self, title, body,user_id,projectType,tags,externalLink,imagesLinks,snippet,date,codeLink,cover_photo):
@@ -51,6 +56,7 @@ class Project(db.Model):
 
 # Create user model.
 class User(db.Model):
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     firstname = db.Column(db.String(100))
     lastname = db.Column(db.String(100))
@@ -59,6 +65,7 @@ class User(db.Model):
     password = db.Column('password' , db.String(10))
     email = db.Column('email',db.String(50),unique=True , index=True)
     registered_on = db.Column('registered_on' , db.DateTime)
+    # projects = db.relationship("project")
 
     def __init__(self , username ,password , email,firstname,lastname):
         self.firstname=firstname

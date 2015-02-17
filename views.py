@@ -1,11 +1,52 @@
 from flask import session, request, make_response, jsonify, flash, url_for, redirect,g,render_template,Flask, abort ,g
 from flask.ext.sqlalchemy import SQLAlchemy
+import jinja2
 
 import os,time
 from datetime import date
 
 from app import app
 from manage import db, Project, User
+
+# ### O auth for Twitter
+# from flask_oauth import OAuth
+# oauth = OAuth()
+# twitter = oauth.remote_app('twitter',
+#     base_url='https://api.twitter.com/1/',
+#     request_token_url='https://api.twitter.com/oauth/request_token',
+#     access_token_url='https://api.twitter.com/oauth/access_token',
+#     authorize_url='https://api.twitter.com/oauth/authenticate',
+#     consumer_key='NUNxNmIWQpPQpWySkQAXKol4A',
+#     consumer_secret='WXQFOsJf6DXEvWsdMqQNXOSirfI5ZXLFXtaJ2hQvQ3fUgdPbSZ'
+# )
+# @twitter.tokengetter
+# def get_twitter_token(token=None):
+#     return session.get('twitter_token')
+
+# @app.route('/logintwitter')
+# def logintwitter():
+#     return twitter.authorize(callback=url_for('oauth_authorized',
+#         next=request.args.get('next') or request.referrer or None))
+
+# @app.route('/oauth-authorized')
+# @twitter.authorized_handler
+# def oauth_authorized(resp):
+#     next_url = request.args.get('next') or url_for('home')
+#     app.logger.debug(resp)
+#     if resp is None:
+#         flash(u'You denied the request to sign in.')
+#         return redirect(next_url)
+
+#     session['twitter_token'] = (
+#         resp['oauth_token'],
+#         resp['oauth_token_secret']
+#     )
+#     session['twitter_user'] = resp['screen_name']
+
+#     flash('You were signed in as %s' % resp['screen_name'])
+#     return redirect(next_url)
+
+### End O Auth
 
 from flask.ext.login import LoginManager, login_user , logout_user , current_user , login_required
 from werkzeug.security import check_password_hash
@@ -16,6 +57,8 @@ login_manager.login_view = 'login'
 
 # Google Analytics id stored in ENV variable
 gaID=os.environ.get('gaID')
+app.config['gaID'] = gaID
+
 
 # login setup from tutorial: 
 # https://blog.openshift.com/use-flask-login-to-add-user-authentication-to-your-python-application/
@@ -50,6 +93,7 @@ def login():
 @app.route('/logout')
 def logout():
     logout_user()
+    session.clear()
     return redirect(url_for('home')) 
 
 @app.before_request
