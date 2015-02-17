@@ -17,7 +17,8 @@ body{
 }
 
 #footer{
-	padding-bottom: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	box-shadow: inset 0px 0px 0px black;
 }
 .row{
@@ -81,7 +82,6 @@ h1,h2,h3,h4,h5,h6,p{
 
 .nav-icon{
 	height: 30px;
-	margin-top: 25px;
 }
 
 
@@ -245,7 +245,7 @@ h1,h2,h3,h4,h5,h6,p{
 
 .messages{
 	margin-top: 25px;
-	background-color: rgb(209, 240, 209);
+
 }
 .messages ul{
 	list-style: none;
@@ -263,3 +263,23 @@ h1,h2,h3,h4,h5,h6,p{
 	cursor: hand;
 }
 
+#find-me{
+	list-style: none;
+	padding-left: 0;
+
+}
+#find-me li{
+	position: relative;
+	padding-top: 10px;
+}
+
+#find-me li a img{
+	float: left;
+}
+#find-me li a p{
+	line-height: 2;
+	padding-left: 40px;
+}
+#footer{
+	background-color: rgb(186, 186, 186);
+}

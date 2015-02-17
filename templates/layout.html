@@ -47,9 +47,7 @@
             <li  id='menu-blog'><a href='/blog'>Blog</a></li>
             <li  id="menu-about"><a href="/about">About</a></li>
             <!-- <span id="social-links"> -->
-              <li><a href="http://www.linkedin.com/in/morganmwallace" target="_blank"><img class="nav-icon social-icon" src="../static/img/linkedin.png"></a></li>
-              <li><a href="http://www.twitter.com/wallacemorgan" target="_blank"><img src="../static/img/twitter.svg" class="nav-icon social-icon"></a></li>
-              <li><a href="http://www.github.com/morganwallace" target="_blank"><img class="nav-icon social-icon" src="../static/img/octocat.svg"></a></li>
+              
             <!-- </span> -->
             
             {% if g.user.is_authenticated()%}
@@ -99,8 +97,9 @@
   {% block content %}
   {% endblock %}
 
-
 </div>
+{% include 'footer.html' %}
+
 </body>
 
     <!-- Bootstrap core JavaScript
@@ -124,4 +123,4 @@
 
       </script>
     {% endif %}
-</body></html>
+</html>
