@@ -189,7 +189,7 @@ def project(title):
     app.logger.debug(myproject)
     app.logger.debug(title)
     title=str(myproject[0]).title()
-    app.logger.debug(myproject[5].split(","))
+    # app.logger.debug(myproject[5].split(","))
     if myproject[7]!=None:
         coverphoto= myproject[7].split(",")
     else:
