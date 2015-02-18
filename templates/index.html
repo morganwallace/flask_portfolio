@@ -10,24 +10,31 @@
 		{% for project in projectsList %}
 			
 			<li class="row card">
-				<a href="/project/{{project.title.lower().replace(' ','-')}}">
+				
 					<div class="description ">
 						<div class="description_content">
 							<div class="row project-header">
-								<h3 class="col-sm-8">{{project.title}}</h3>
+								<a href="/project/{{project.title.lower().replace(' ','-')}}">
+									<h3 class="col-sm-8">{{project.title}}</h3>
+								</a>
 								<p class="col-sm-4 dates">{{project.date}}</p>
 							</div>
 							<p>{{project.snippet}}</p>
+							<a href="/project/{{project.title.lower().replace(' ','-')}}">
+								<button class="btn btn-default btn-xs" ><img class="read-more-icon" src="../static/img/open-book.svg" style=" ">   Read More</button>
+							</a>
 						</div>
 					</div>
-
-					<img class="projectPic " src="{{project.imagesLinks}}">
-				</a>
+					<a href="/project/{{project.title.lower().replace(' ','-')}}">
+						<img class="projectPic " src="{{project.imagesLinks}}">
+					</a>
 				<div class="tags">
+					<img src="../static/img/price-tag.svg" style="height: 15;">
 					{% for tag in project.tags %}
 						<!-- <span class="col-sm-6"> -->
 							<a href="/tags/{{tag}}">
-								<span class="label label-default">{{tag}}</span>
+								
+								<span class="label label-default"> {{tag}}</span>
 							</a>
 						<!-- </span> -->
 					{% endfor %}
@@ -41,7 +48,16 @@
 	<!-- <h2>Morgan:</h2> -->
 	<a href="/about"><img id='profilePic' src="/static/img/Profile_square.jpg"></a>
 	<p>Morgan is an entrepreneur and software developer in the San Francisco Bay Area. He recently graduated from UC Berkeley's School of Information with a Masters in Information Management and Systems. <a href='/about'>Learn more</a></p>
-	
+	<ul id="about-social-icons">
+	<li><h4>Profiles: </h4></li>
+		<li><a href="http://www.linkedin.com/in/morganmwallace" title="LinkedIn Profile" class="mytooltip" target="_blank"><img class="nav-icon social-icon" src="../static/img/linkedin.png"></a></li>
+	  <li><a href="http://www.twitter.com/wallacemorgan" title="Twitter Profile" target="_blank"><img src="../static/img/twitter.svg" class="nav-icon social-icon"></a></li>
+	  <li><a href="http://www.github.com/morganwallace" title="GitHub Profile" target="_blank"><img class="nav-icon social-icon" src="../static/img/github.svg"></a></li>
+	  <li><a href="http://www.facebook.com/morganmwallace" title="Facebook Profile" target="_blank"><img class="nav-icon social-icon" src="../static/img/facebook.svg"></a></li>
+	  <li><a href="https://plus.google.com/u/0/+MorganWallacemorganwallace1" title="Google+ Profile"target="_blank"><img class="nav-icon social-icon" src="../static/img/google+.svg"></a></li>
+	  <li><a href="http://instagram.com/morganmwallace/" title="Instagram Profile" target="_blank"><img class="nav-icon social-icon" src="../static/img/instagram.svg"></a></li>
+	  <li><a href="http://www.yelp.com/user_details?userid=8VMZiAzajQsc2eIdrTrSAA" title="Yelp Profile" target="_blank"><img class="nav-icon social-icon" src="../static/img/yelp.svg"></a></li>
+	</ul>
 </div>
 
 
