@@ -15,14 +15,13 @@ body{
 	/*margin-top: 50px;*/
 	/*padding-top: 50px;*/
 	overflow-x: hidden; 
-	/*overflow: hidden;*/
+	/*overflow:hidden;*/
 	background-color: #efefef;
 
-    padding-bottom: 30px;
+    /*padding-bottom: 30px;*/
 
 }
-
-#wrapper{
+#wrap{
 	min-height:100%;
 	position:relative;
 	/*padding-bottom: 30px;*/
@@ -33,8 +32,6 @@ body{
 	padding-bottom: 20px;
 	box-shadow: inset 0px 0px 0px black;
 	position: absolute;
-
-	height: 250px;
 	background-color: rgb(186, 186, 186);
 	width:100%;
 
@@ -89,7 +86,8 @@ body{
 
 .navbar-brand{
 	font-size: 15px;
-	font-weight: 100;
+	font-weight: 200;
+	color: black;
 }
 h1,h2,h3,h4,h5,h6,p{
 /* 	font-family: monospace; */
@@ -116,7 +114,7 @@ h1,h2,h3,h4,h5,h6,p{
 	margin-top: 25px;
 	/*box-shadow: 0px 0px 26px black;*/
 	position: relative;
-	padding-bottom: 350px;
+	padding-bottom: 270px;
 
 }
 
@@ -128,6 +126,7 @@ h1,h2,h3,h4,h5,h6,p{
 
 #aboutcolumn{
 	padding-top: 20px;
+	padding-right: 10px;
 	text-align: center;
 	background-color: white;
 }
@@ -316,5 +315,14 @@ h1,h2,h3,h4,h5,h6,p{
 	display: inline;
 	margin-right: 5px;
 
+}.label{
+	padding-top: 2px;
+	padding-right: 6px;
+	padding-bottom: 3px;
+	padding-left: 4px;
 }
 
+.col-half{
+	width: 50%;
+	float: left;
+}

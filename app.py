@@ -11,6 +11,8 @@ app = Flask(__name__)
 
 # Loads configuration from `config.py`
 app.config.from_object('config')
+if os.environ.get('SERVERTYPE')=='dev':
+	app.debug = True
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
 
@@ -22,8 +24,7 @@ if __name__ == '__main__':
     #to run a debug mode only when developing locally run this in terminal:
     # $ export SERVERTYPE="dev"
 
-    if os.environ.get('SERVERTYPE')=='dev':
-        app.debug = True
+    
 
 
     app.run(host='0.0.0.0', port=port)
