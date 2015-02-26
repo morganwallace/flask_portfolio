@@ -118,7 +118,7 @@ def home():
             'externalLink':proj[4],
             'imagesLinks':url_for('static',filename='img/'+proj[5].split(",")[0]), #only take first photo
             'snippet':proj[6],
-            'date':date.fromtimestamp(proj[7]*24*3600).strftime("%d %b %Y"),
+            'date':date.fromtimestamp(proj[7]*24*3600).strftime("%b %Y"),
             'timestamp':proj[7],
             })
     projectsList= sorted(projectsList, key=lambda k: k['timestamp'])
