@@ -6,7 +6,7 @@
     {% if coverphoto %}
       <img src="../static/img/{{coverphoto}}" id="cover-photo">
     {% endif %}
-    <div class="col-md-8 col-md-offset-2 main">
+    <div class="col-md-10 col-md-offset-1 main">
         
         <div id="content-box" class="card">
          
@@ -25,28 +25,30 @@
 
             </div>
             <br>
-          <p>{{body}}</p>
+          {{body}}
           {% if externalLink %}
             <br>
               <a href="{{externalLink}}" class="navbar-btn project-link btn-success btn" >
-               <div class="glyphicon glyphicon-star"></div>  View {{title}}
+               <img src='../static/img/globe-white.svg' style="width:14px">  View {{title}}
               </a>
           {% endif %}
           {% if codelink %}
             <br>
               <a href="{{codelink}}" class="navbar-btn code-link btn-info btn" >
-               <div class="glyphicon glyphicon-off"></div>  View code
+               <img src="../static/img/github-white.svg" style="width:14px">  View code
               </a>
           {% endif %}
-          {% for piclink in imagesLinks %}
-            <br><br>
-            <img class="project-images" src="../static/img/{{piclink}}">
-          {% endfor %}
+          {% if imagesLinks %}
+            {% for piclink in imagesLinks %}
+              <br><br>
+              <img class="project-images" src="../static/img/{{piclink}}">
+            {% endfor %}
+          {% endif %}
           <br>
-          <a href="/" >
+        <!--   <a href="/" >
             <span id="home-btn" class="btn-default btn">
               <div class="glyphicon glyphicon-home"></div>      Return Home</span>
-          </a>
+          </a> -->
         </div>
         
 

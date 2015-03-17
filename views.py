@@ -2,12 +2,18 @@ from flask import session, request, make_response, jsonify, flash, url_for, redi
 from flask.ext.sqlalchemy import SQLAlchemy
 import jinja2
 
+import markdown
+from flask import Markup
+
 import os,time
 from datetime import date
 
 from app import app
 from manage import db, Project, User
 
+# Loads configuration from `config.py`
+# from config import *
+SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 # ### O auth for Twitter
 # from flask_oauth import OAuth
 # oauth = OAuth()
@@ -102,21 +108,33 @@ def before_request():
 
 ### End Login views
 
+
+
+def get_first_image(img_str):
+    app.logger.debug(img_str)
+    try:
+        img_url=url_for('static',filename='img/'+img_str.split(",")[0])
+    except:
+        return None
+    return img_url
+
+
 @app.route('/')
 def home():
     projects=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks,Project.snippet,Project.date).all()
+    
     # all_users = User.query.all()
     projectsList=[]
-
+    # img_url=get_first_image(proj[5])
     for proj in projects:
-
+        
         projectsList.append({
             'title':str(proj[0]).title(),
-            'body':proj[1],
+            'body':Markup(markdown.markdown(proj[1])),
             'projectType':proj[2],
             'tags':proj[3].split(","),
             'externalLink':proj[4],
-            'imagesLinks':url_for('static',filename='img/'+proj[5].split(",")[0]), #only take first photo
+            'imagesLinks':get_first_image(proj[5]), #only take first photo
             'snippet':proj[6],
             'date':date.fromtimestamp(proj[7]*24*3600).strftime("%b %Y"),
             'timestamp':proj[7],
@@ -198,11 +216,11 @@ def project(title):
     print myproject[8]
     return render_template('project.html',
         title=title, 
-        body=myproject[1],
+        body=Markup(markdown.markdown(myproject[1])),
         projectType=myproject[2],
         tags=myproject[3].split(","),
         externalLink=myproject[4],
-        imagesLinks=myproject[5].split(","),
+        imagesLinks=myproject[5].split(','),
         pageTitle=title+" - Morgan Wallace",
         date=date.fromtimestamp(myproject[6]*24*3600).strftime("%b %d, %Y"),
         coverphoto=coverphoto,

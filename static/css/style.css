@@ -115,6 +115,7 @@ h1,h2,h3,h4,h5,h6,p{
 	/*box-shadow: 0px 0px 26px black;*/
 	position: relative;
 	padding-bottom: 270px;
+	padding-top: 75px;
 
 }
 
@@ -180,10 +181,10 @@ h1,h2,h3,h4,h5,h6,p{
 	list-style: none;
 	color: white;
 	padding-left: 0;
+
+	/*margin: 0;*/
 }
-#projectsList li{
-	margin-bottom: 15px;
-}
+
 #projectsList li .description{
 	text-align: left;
 }
@@ -200,6 +201,9 @@ h1,h2,h3,h4,h5,h6,p{
 	border-radius: 3px;
 	border-bottom: 2px inset #c7c7c7;
 	padding: 20px;
+	margin-bottom: 15px;
+
+
 }
 
 .navbar{
@@ -215,10 +219,6 @@ h1,h2,h3,h4,h5,h6,p{
 	max-width: 100%;
 }
 
-#content-box{
-	padding: 20px;
-
-}
 
 .navbar-brand,
 .navbar-nav li a {
@@ -226,7 +226,11 @@ h1,h2,h3,h4,h5,h6,p{
     height: 75px;
     padding-top: 0;
     font-size: 20px;
+}
 
+.navbar-brand span{
+	float: right;
+	padding-left: 10px;
 }
 
 #menu{
@@ -302,6 +306,7 @@ h1,h2,h3,h4,h5,h6,p{
 }
 #find-me li a p{
 	padding-left: 40px;
+	padding-top: 4px;
 }
 #find-me li a:hover{
 	text-decoration: none;
@@ -326,3 +331,8 @@ h1,h2,h3,h4,h5,h6,p{
 	width: 50%;
 	float: left;
 }
+.navbar-brand svg{
+	fill: rgb(101, 101, 101);
+	width: 30px;
+}
+

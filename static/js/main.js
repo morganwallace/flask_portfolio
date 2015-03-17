@@ -81,6 +81,31 @@ $(window).load(function() {
 	$("#bg").show();
 });
 
+
+function logoFlicker(){
+	$(".navbar-brand span").hide();
+	$("#logoPartRight").fadeOut(500,function(){
+		setTimeout(function(){
+			$("#logoPartRight").fadeIn(800);
+			$("#logoPartLeft").fadeOut(800,function(){
+				setTimeout(function(){
+					$("#logoPartLeft").fadeIn(800,function(){
+						$("#svg_logo").animate({
+							width:"30px"
+						},1000,function(){
+							//logo shrink complete
+							$(".navbar-brand span").fadeIn(500);
+						})
+					});
+				},1000);
+			
+			});
+		},1000);
+		
+	})
+}
+
+
 $(document).ready(function(){
 
 	//add the bottom border to the correct menu item
@@ -117,6 +142,11 @@ $(document).ready(function(){
 
 	  })
 
+	  // Implement the logo animation
+	  if(window.location.pathname=='/'){
+		  $("#svg_logo").css({width:"110px"})
+		  logoFlicker();
+	  }
 
 	// if ($(".project-link").attr('href').search('github')attr('href').search('github')>0){
 	// 	$(".project-link").text('Source code on GitHub');

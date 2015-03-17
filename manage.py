@@ -5,13 +5,19 @@ from flask.ext.migrate import Migrate, MigrateCommand
 import os
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
-
+import sys
 
 app = Flask(__name__)
 
 # Don't store the DB URI in Source Code. 
 # Set it as environmental variable and fetch it here
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
+
+# Loads configuration from `config.py`
+from config import *
+# Use production database (uncomment for override)
+# SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+
+app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
