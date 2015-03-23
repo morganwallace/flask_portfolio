@@ -5,7 +5,7 @@
 
 <div class="col-sm-12 row" id="projectsViewer">
 	
-	<ul id="projectsList" class="row col-sm-5 col-sm-offset-1">
+	<ul id="projectsList" class="row col-sm-6 col-sm-offset-1">
 		
 		{% for project in projectsList %}
 			
@@ -43,22 +43,16 @@
 			
 		{% endfor %}
 	</ul>
-	<div id='sidebar' class="col-sm-5 col-sm-offset-1">
+	<div id='sidebar' class="col-sm-5">
 		<div class="row card" id="aboutcolumn">
 			<!-- <h2>Morgan:</h2> -->
-			<a href="/about"><img id='profilePic' src="/static/img/Profile_square.jpg"></a>
-			<p>Morgan is an entrepreneur and software developer in the San Francisco Bay Area. He recently graduated from UC Berkeley's School of Information with a Masters in Information Management and Systems. <a href='/about'>Learn more</a></p>
-			<ul id="about-social-icons">
-				<li><h4>Find me on: </h4></li>
-				<li><a href="http://www.linkedin.com/in/morganmwallace" title="LinkedIn Profile" class="mytooltip" target="_blank"><img class="nav-icon social-icon" src="../static/img/linkedin.png"></a></li>
-			 	 <li><a href="http://www.twitter.com/wallacemorgan" title="Twitter Profile" target="_blank"><img src="../static/img/twitter.svg" class="nav-icon social-icon"></a></li>
-				  <li><a href="http://www.github.com/morganwallace" title="GitHub Profile" target="_blank"><img class="nav-icon social-icon" src="../static/img/github.svg"></a></li>
-				  <li><a href="http://www.facebook.com/morganmwallace" title="Facebook Profile" target="_blank"><img class="nav-icon social-icon" src="../static/img/facebook.svg"></a></li>
-				  <li><a href="https://plus.google.com/u/0/+MorganWallacemorganwallace1" title="Google+ Profile"target="_blank"><img class="nav-icon social-icon" src="../static/img/google+.svg"></a></li>
-				  <li><a href="http://instagram.com/morganmwallace/" title="Instagram Profile" target="_blank"><img class="nav-icon social-icon" src="../static/img/instagram.svg"></a></li>
-				  <li><a href="http://www.yelp.com/user_details?userid=8VMZiAzajQsc2eIdrTrSAA" title="Yelp Profile" target="_blank"><img class="nav-icon social-icon" src="../static/img/yelp.svg"></a></li>
-				  <li><h4>Read <a href="http://blog.morganwallace.com">my wearable tech blog<img src="../static/img/wearable.svg" style=" width:30px; padding-left:10px; "></a></h4></li>
-			</ul>
+			<div class="col-lg-6">
+				<a href="/about"><img id='profilePic' src="/static/img/Morgan-Wallace.jpg" alt="Photo Credit: http://matthewmorgan.net/"></a>
+			</div>
+			<div class="col-lg-6">
+				<p>Morgan is an entrepreneur and software developer in the San Francisco Bay Area. He has a Masters in Information Management and Systems from UC Berkeley. <a href='/about'>More about Morgan</a></p>
+				{% include 'social.html' %}
+			</div>
 		</div>
 	</div>
 </div>
