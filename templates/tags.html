@@ -1,1 +1,16 @@
-{% extends 'index.html' %}
+{% extends 'layout.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+
+
+<div class="col-sm-12 row" id="projectsViewer">
+	<div class="card col-sm-5 col-sm-offset-4">
+		<h2 style="text-align: center; margin:0">"{{tag}}" tags</h2>
+	</div>
+	<div class="col-sm-11 col-sm-offset-1">
+		{% include 'projects.html' %}
+	</div>
+</div>
+{% endblock %}
+
+	

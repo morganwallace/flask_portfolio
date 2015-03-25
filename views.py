@@ -246,7 +246,7 @@ def tag(tag):
             'date':date.fromtimestamp(proj[7]*24*3600).strftime("%d %b %Y"),
             'timestamp':proj[7],
             })
-    return render_template('tags.html', projectsList=projectsList,pageTitle=tag+" - Morgan Wallace")   
+    return render_template('tags.html', projectsList=projectsList,pageTitle=tag+" - Morgan Wallace",tag=tag)   
 
 
 @app.route('/robots.txt')

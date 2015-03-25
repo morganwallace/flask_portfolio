@@ -79,20 +79,17 @@ body{
 
 #profilePic{
 	/*float: left;*/
-	max-width: 200px;
+	max-width: 220px;
 	 /*border-radius: 50%; */
 	padding: 0:;
 	margin-right: 10px;
-	width: 100%;
 /* 	box-shadow: 0px 4px 13px rgba(0,0,0,0.29); */
 }
 #aboutPic{
 	padding: 0;
 	width: 100%;
 }
-#aboutColumn div{
-	padding: 0;
-}
+
 
 .navbar-brand{
 	font-size: 15px;
@@ -130,17 +127,12 @@ h1,h2,h3,h4,h5,h6,p{
 
 }
 
-#projectsViewer, #aboutcolumn{
-	margin-top: 0px;
-	/*background-color: white;*/
-	padding-right: 0px;
-}
+
 
 #aboutcolumn{
 	padding-top: 20px;
-	padding-right: 10px;
+	/*padding-right: 10px;*/
 	text-align: center;
-	background-color: white;
 }
 #aboutcolumn p{
 	text-align: left;
@@ -191,7 +183,7 @@ h1,h2,h3,h4,h5,h6,p{
 #projectsList{
 	list-style: none;
 	color: white;
-	padding-left: 0;
+	/*padding-left: 0;*/1
 
 	/*margin: 0;*/
 }
@@ -218,7 +210,7 @@ h1,h2,h3,h4,h5,h6,p{
 }
 
 .navbar{
-	opacity: .9;
+	opacity: .97;
 	/*position: absolute;*/
 }
 
