@@ -1,0 +1,136 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Ravelry Designers</title>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../static/js//viz.js"></script>
+    <script type="text/javascript" src="../static/js//intro.js"></script>
+    <script type="text/javascript" src="../static/js//modal.js"></script>
+    <script type="text/javascript" src="../static/js//jquery.tipsy.js"></script>
+    <!--script type="text/javascript" src="js/jquery-ui-1.10.2.js"></script-->
+    
+            <!--Styles -->
+    <link href="../static/css/tipsy.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/ravelry.css" />
+    <!--link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.2.min.css" /-->    
+	
+</head>
+
+<body>
+
+        <div class="infoDiv">
+            <h1>Ravelry Designers!</h1>
+            <p>This visualization shows 483 patterns from 5 different designers, organized into 8 categories. Each dot in the graph below represents one pattern; hover over it to see which one it is! The shaded region shows which patterns appear in the image randomizer below the graph. Use the filters at the left to see specific designers and categories. To change the selection of patterns, click the Randomize! button. We hope you find a new pattern to make!</p>
+
+        </div>
+
+        <div id="filters">
+
+            <h3>Filters:</h3>
+
+            
+            <div id="filter-open">
+                <button class="button" id="button-designers" onclick="toggleDesigners()">Designers</button>
+                <button class="button" id="button-categories" onclick="toggleCategories()">Categories</button>
+
+            </div>
+        </div>
+        
+            <div id="filter-designers" class="hidden"><!-- Designer Filters -->
+                <button class="button designer">Ysolda Teague</button>
+                <button class="button designer">Cookie A</button>
+                <button class="button designer">Jared Flood</button>
+                <button class="button designer">Rebecca Danger</button>
+                <button class="button designer">Stephen West</button>
+            </div>
+
+            <div id="filter-categories" class="hidden">  
+            	<button class='button category Blanket' filtered=true>Blanket</button>
+                <button class='button category Sweaters' filtered=true>Sweaters</button>
+	            <button class='button category Socks' filtered=true>Socks</button>
+	            <button class='button category Gloves' filtered=true>Gloves</button>
+                <button class='button category Hats' filtered=true>Hats</button>
+                <button class='button category Home' filtered=true>Home</button>
+                <button class='button category Shawls' filtered=true>Shawls / Scarves</button>
+                <button class='button category Softies' filtered=true>Softies</button>
+            </div>
+
+<!--     This is where the svg scatter plot is appended from vis.js -->
+    <div id='graph'></div> 
+
+    <div id="imageGridInfo" class="infoDiv">
+        <h3>Knit Something New!</h3>
+        <div>
+            <button id="randomize" class="button" onclick="reroll()">Randomize!</button>
+        </div>
+        <div id="imageGridText"></div>
+    </div>
+
+    <div id="imageGrid">
+	    <div id='loading'>Images Loading... </div>
+    </div>
+
+    
+
+    <div id="button-top">
+        <button class="button" onclick="location.href='#top'">Return to Top</button>
+    </div>
+
+    <div id="moarGraphs" class="infoDiv">
+        <h3>Who Are These People, Anyway?</h3>
+        <div id="aboutDesigners">
+            <a href="http://www.ravelry.com/designers/ysolda-teague"><img src="../static/charts/d-ysolda.jpg"><h4>Ysolda Teague</h4></a>
+            <a href="http://www.ravelry.com/designers/cookie-a"><img src="../static/charts/d-cookie.png"><h4>Cookie A</h4></a>
+            <a href="http://www.ravelry.com/designers/jared-flood"><img src="../static/charts/d-brooklyntweed.jpg"><h4>Jared Flood</h4></a>
+            <a href="http://www.ravelry.com/designers/rebecca-danger"><img src="../static/charts/d-rebeccadanger.jpg"><h4>Rebecca Danger</h4></a>
+            <a href="http://www.ravelry.com/designers/stephen-west"><img src="../static/charts/d-westknits.png"><h4>Stephen West</h4></a>
+        </div>    
+        <br />
+        <p>But wait, there's more! Here's a little bit of summary information about our designer's patterns...</p>
+        <img src="../static/charts/freevpaid.jpg"><br />
+        <p>Most of these patterns are available for purchase. How does that affect the number of projects?</p>
+        <img src="../static/charts/freevpaid-projects.jpg">
+
+    </div>
+
+
+    <footer>
+        <p>
+            Designed and coded by 
+            <a href="http://www.morganwallace.com">Morgan Wallace</a>, 
+            <a href="http://www.wordium.com">Sandra Helsley</a>, 
+            <a href="http://www.linkedin.com/profile/view?id=149226762">Sonthonax Vernard</a>
+             - <a href="http://blogs.ischool.berkeley.edu/i247s13">INFO 247, Spring 2013</a></p>
+    </footer>
+    
+<!--   Modals    -->
+<div class="modal" id="modal1">
+	<p class="close-button">x</p>
+	<h2 class="overlay-title" id="overlay-title1">Welcome to Ravelry Designers</h2>
+	<h2 class="overlay-title" id="overlay-title2">Explore the Graph!</h2>
+	<h2 class="overlay-title" id="overlay-title3">Filters</h2>
+	<h2 class="overlay-title" id="overlay-title4">Pictures</h2>
+	<h2 class="overlay-title" id="overlay-title5">Ready, Set, Go!</h2>
+	
+	<p id="overlay-text1" class="overlay-text"><strong>What's this? </strong> It's a fun way to explore cool knitting patterns from great designers.</p>		
+	
+		<p id="overlay-text2" class="overlay-text">Explore patterns from popular designers. <span title="That's right, you've got the idea!"><strong>Hover</strong></span> over the dots to get information on patterns. Clicking on popups takes you to Ravelry.com.</p>
+		
+		<p id="overlay-text3" class="overlay-text"><strong>Too many dots?</strong> Apply filters for <strong>Designers</strong> or <strong>Categories</strong></p>
+		
+		<p id="overlay-text4" class="overlay-text">Images of patterns and their links are here. <strong>No filters?</strong> Then we show you random selections. Click <strong>'Randomize!'</strong> to mix it up.</p>
+		
+		<p id="overlay-text5" class="overlay-text">You know what to do now. <strong>Explore!</strong></p>
+		
+	<span id="nextbutton" class="overlay-next-button btn">Next</span>
+	<span id="beginbutton" class="overlay-next-button btn">Begin</span>
+</div>
+<span id="resume-intro" class= "btn">Resume Intro</span>
+
+<div id="fade"></div>
+</body>
+</html>

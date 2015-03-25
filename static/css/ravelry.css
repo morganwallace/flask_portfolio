@@ -1,0 +1,573 @@
+/* INFO 247 Spring 2013
+Ravelry Designer Visualization
+
+Colours
+ - Dark grey: #303030
+ - Light Grey: #F3F3F3
+ - Tan: #D3D3B1
+ - Pink (Accents): #B71F4A
+ - Green (Accents): #C2EBB1 */
+
+@import url(http://fonts.googleapis.com/css?family=Cherry+Swash);
+
+
+
+/****************** Basic html and body styling ********************/
+html{
+
+	background-image:url('knit-grey.png');
+	background-repeat: repeat;
+}
+
+html,
+body{
+	width: 99%;
+	min-height: 250px;
+	margin: 0 auto;
+
+	font-family: Arial, sans-serif;
+	color: #D3D3B1;
+
+	/*background-color:#303030;
+	background-color: rgba(48,48,48,.6);*/
+}
+
+/****************** Basic header and link styling ********************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	
+	font-family: Arial, sans-serif;
+	text-align: center;
+	font-weight: normal;
+	color: #F3F3F3;
+}
+
+a{
+	color: #B71F4A;
+	text-decoration: none;
+}
+p{
+	margin:0;
+}
+
+/****************** float classes ********************/
+.floatLeft {
+	float: left;
+}
+
+.floatRight {
+	float: right;
+}
+
+/****************** header styling ********************/
+header{
+	width: 100%;
+	margin: 0;
+
+
+	color: #B71F4A;
+	/*background-color: #D3D3B1;
+	//background-color: rgba(211,211,177, .9);*/
+	z-index: 100;
+}
+
+/****************** Footer styling ********************/
+footer {
+	height: 30px;
+
+	position: relative;
+	bottom:0;
+	left:0;
+	right: 0;
+
+	color: #303030;
+	background-color: #D3D3B1;
+	background-color: rgba(211,211,177,.8);
+	text-align: center;
+	font-size: 15px;
+
+	padding-top: 5px;
+	padding-bottom: 0;
+	border-top: 7px solid #B71F4A;
+	z-index: 100;
+}
+
+
+/******************* button styling ***********************/
+button {
+	display: block;
+
+	width: 135px;
+	height: 30px;
+
+	margin: 5px auto;
+
+	border: none;
+	background: transparent;
+
+	background-color: #D3D3B1;
+	color: #454545;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+
+	font-family: Arial, sans-serif;
+	font-size: .95em;
+	text-shadow: 0.1em 0.1em 0.2em #c0c0c0;
+}
+
+
+.button-selected{
+	color: #D3D3B1;
+	background-color: #B71F4A;
+}
+
+.designer{
+
+
+}
+
+.category{
+	background-color: #D3D3B1;
+	text-shadow: 0.1em 0.1em 0.2em #b0b0b0;
+	border: 4px solid black;
+}
+
+#button-top{
+	
+	margin: 5px auto;
+}
+
+/****************** filter styling ********************/
+
+#filters{
+	width: 155px;
+	position: absolute;
+	left:15px;
+	top:200px;
+	padding: 0px 8px 10px 6px;
+
+	color: #D3D3B1;
+	background-color: #303030;
+	background-color: rgba(48,48,48,.75);
+
+}
+
+#filters, #filter-designers, #filter-categories{
+
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	z-index: 100;
+}
+
+#filter-designers, #filter-categories{
+	position: absolute;
+	left: 180px;
+	top: 100px;
+
+	/*border: 1px dotted #B71F4A;*/
+	background-color: #F3F3F3;
+	background-color: rgba(243,243,243,.75);
+	padding: 5px 10px;
+
+}
+
+#filter-categories{
+	top: 280px;
+	margin-top: 10px;
+}
+
+
+#button-designers:hover{
+	cursor: hand;
+}
+
+/****************** Modal styling ********************/
+.hidden{
+	display:none;
+}
+
+.overlay{
+	background-color: #F3F3F3;
+	background-color: rgba(243,243,243,.75);
+	color: #303030;
+	/*text-shadow: 0.2em 0.2em 0.3em #b0b0b0;*/
+
+
+	width: 140px;
+/* 	margin: 25px; */
+	padding: 5px 10px;
+	font-size: 12;
+
+	/*border-top: 1px dotted #B71F4A;
+	border-bottom: 1px dotted #B71F4A;*/
+/* 	border-radius: 3px; */
+	position: absolute;
+	bottom:3;
+/* 	bottom: 0; */
+
+
+	/* for testing */
+/* 	position: fixed; */
+/* 	top: 200; */
+/* 	left: 100; */
+}
+
+/****************** Graph styling ********************/
+#graph{
+	/*width: 90%;
+	/*margin: 25px;*/
+	margin-left: 180px;
+	padding: 10px;
+	position: relative;
+	top: 10px;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+}
+
+#graph svg{
+	background-color: #e6e6e6;
+	color: #303030;
+	border: 6px solid #B71F4A;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+.tooltip{
+	font-size: 4;
+	color: black;
+}
+.key{
+	font-family: Arial, sans-serif;
+	font-size:10;
+}
+.key-header{
+	font-size: 18
+}
+
+.YaxisLabel, .XaxisLabel{
+	font-family: Arial, sans-serif;
+	font-size: 15;
+}
+
+.popup{
+	font-family: Arial, sans-serif;
+    font-size: 11px;
+}
+.popup h2{
+	margin-left: 0;
+	margin-right: 0;
+	padding-top: 0;
+	-webkit-margin-before: 0em;
+}
+
+.popup a{
+	color: #f3f3f3;
+}
+.popCat{
+	text-shadow: 0.1em 0.1em 0.2em #c0c0c0;
+}
+/*
+.tipsy-inner{
+	position: relative;
+	top: 95;
+	right:75
+}
+*/
+.popup a div img{
+	height: 150px;
+}
+
+/***************** category colours ********************/
+/* 
+	red: #bf4343;
+	orange: #ef8a25;
+	"puke yellow": #bebe38; yellow: #d9c305;
+	green: #5dab5d;
+	blue: #3ab6c2; #2a858e;
+	purple: #917abf;
+	pink: #bf63a4;
+	brown: #8b665f;
+*/
+
+.Sweaters{
+	fill: #bf4343;
+	border-color: #bf4343;}
+.Sweaters-popup{color: #bf4343;}
+
+.Blanket{
+	fill: #ef8a25;
+	border-color: #ef8a25;}
+.Blanket-popup{color: #ef8a25;}
+
+.Shawls{
+	fill: #d9c305;
+	border-color: #d9c305;}
+.Scarves-popup{color: #d9c305;}
+
+.Hats{
+	fill: #5dab5d;
+	border-color: #5dab5d;}
+.Hats-popup{color: #5dab5d;}
+
+.Socks{
+	fill: #2a858e;
+	border-color: #2a858e;}
+.Socks-popup{color: #2a858e;}
+
+.Gloves{
+	fill: #917abf;
+	border-color: #917abf;}
+.Gloves-popup{color: #917abf;}
+
+.Softies{
+	fill: #bf63a4;
+	border-color: #bf63a4;}
+.Softies-popup{color: #bf63a4;}
+
+.Home{
+	fill: #8b665f;
+	border-color: #8b665f;}
+.Home-popup{color: #8b665f;}
+
+
+
+
+/************* image grid and image styling ******************/
+
+/*#imageGrid div, .gridPic{
+	border: 10px solid #303030;
+	margin-bottom: 20;
+	margin-right: 10;
+}*/
+
+.infoDiv{
+	background-color: #303030;
+	background-color: rgba(48,48,48,.75);
+	padding: 10px;
+	padding-bottom: 20px;
+	margin-top: 10px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+.infoDiv p{
+	/*margin: auto auto;
+	max-width: 70%;*/
+	text-align: justify;
+}
+
+#imageGridInfo{
+	margin-top: 40px;
+	text-align: center;
+}
+
+#randomize{
+	margin-top: 25px;
+}
+
+#imageGrid{
+	margin-top: 15px;
+	margin-left: 10px;
+
+   -webkit-column-count: 7;
+   -webkit-column-gap:   0px;
+   -moz-column-count:    7;
+   -moz-column-gap:      0px;
+   column-count:         7;
+   column-gap:           0px;
+   z-index: 0;
+}
+
+.gridPic{
+	width: 140px; 
+    background-position: center center;
+	border: 10px solid #303030;
+	margin: 5px auto;
+	padding: 0;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	/*margin-bottom: 20;
+	margin-right: 10;*/
+}
+.imgContainer{
+	position: relative;
+	margin: 0;
+
+}
+.imgContainer:hover{
+	cursor: pointer;
+	cursor: hand;
+}
+
+#loading{
+	font-size: 30;
+	color: #f3f3f3;
+	background-color: #303030;
+	background-color: rgba(48,48,48,.75);
+	position: relative;
+/* 	top: 70%; */
+	left: 50%;
+	padding: 10px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/************** Extra graphs *****************/
+#moarGraphs{
+	min-height: 400px;
+	margin-top: 25px;
+}
+
+#moarGraphs img{
+	display:block;
+	margin: auto auto;
+}
+
+#moarGraphs p{
+	text-align: center;
+}
+
+#aboutDesigners{
+	margin-top: 15px;
+	margin-left: 10px;
+
+   -webkit-column-count: 5;
+   -webkit-column-gap:   0px;
+   -moz-column-count:    5;
+   -moz-column-gap:      0px;
+   column-count:         5;
+   column-gap:           0px;
+   z-index: 0;
+}
+
+/************** Overlay & Modal ***************/
+
+.modal {
+    display: none; /* ensures it’s invisible until it’s called */
+    position: absolute; /* makes the div go into a position that’s absolute to the browser viewing area */
+/*     left: 50%-200px; */
+    top: 10%; /* positions the div half way vertically */
+/*     padding: 17px 25px 25px 25px;  */
+    border: 2px solid black;
+    background-color: #ebebeb;
+    color: #3a5033;
+    z-index: 1000; /* makes the div the top layer, so it’ll lay on top of the other content */
+    border-radius: 7px;
+    width: 400;
+    max-height: 250;
+    min-height: 130;
+}
+#modal2{
+	top:0;
+}
+
+.btn {
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  padding-top: 0.75em;
+  padding-right: 1.5em;
+  padding-bottom: 0.8125em;
+  padding-left: 1.5em;
+  font-size: 1em;
+  background-color: #2ba6cb;
+  border-color: #2284a1;
+  color: white; 
+ }
+ 
+#nextButton{
+  left:70%;
+}
+#beginbutton{
+	left:38%;
+}
+
+.btn:hover, .btn:focus {
+    background-color: #2284a1; }
+.btn:hover, .btn:focus {
+    color: white; }
+
+.overlay-title{
+	text-align: center; 
+	color: black;
+	margin: auto 0px 19px 0px;
+	border-bottom: 1px solid black;
+	background-color: #dddddd;
+	padding: 10px 0px 5px 0px;
+	margin: 0px
+}
+.overlay-text{
+	padding: 15px
+}
+
+.close-button{
+	border: 1px solid rgba(0,0,0,0.15);
+	border-radius: 5px;
+	width: 15;
+	color: #939090;
+	text-align: center;
+	float: right;
+	right: 2;
+	top: 2;
+	position: relative;
+}
+
+.close-button:hover{
+	text-decoration: underline;
+	cursor: hand;
+	cursor: pointer;
+
+
+}
+#fade {
+    display: none;  /* ensures it’s invisible until it’s called */
+    position: absolute;  /* makes the div go into a position that’s absolute to the browser viewing area */
+    left: 0%; /* makes the div span all the way across the viewing area */
+    top: 0%; /* makes the div span all the way across the viewing area */
+    background-color: black;
+    -moz-opacity: 0.6; /* makes the div transparent, so you have a cool overlay effect */
+    opacity: .60;
+    filter: alpha(opacity=60);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 900; /* makes the div the second most top layer, so it’ll lay on top of everything else EXCEPT for divs with a higher z-index (meaning the .modal ruleset) */
+}
+
+#resume-intro{
+	position: absolute;
+	top:-50;
+	right:12;
+	width: 110;
+	background-color: gray;
+    background-color: rgba(232,232,232,0.51);
+    border-color: #d0d0d0;
+    color: #333333; 
+    box-shadow: 2px 1px 73px 8px #181818;
+	
+}
+ #resume-intro:hover, #resume-intro:focus, #resume-intro:hover, #resume-intro:focus {
+      background-color: #d0d0d0; }
+    #resume-intro:hover, #resume-intro:focus, #resume-intro:hover, #resume-intro:focus {
+      color: #333333; }
