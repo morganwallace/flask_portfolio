@@ -2,16 +2,12 @@
 {% block title %}Login{% endblock %}
 {% block content %}
 
+<div class="row" id="projectsViewer">
 
-<div class="col-sm-12 row" id="projectsViewer">
-	<div class="col-sm-6 ">
-		{% include 'projects.html' %}
-	</div>
+	{% include 'projects.html' %}
 
-	<div id='sidebar' class="col-sm-6">
-		{% include 'about_sidebar.html' %}
-	</div>
-	
+
+
 	
 </div>
 
@@ -30,5 +26,5 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
     </script>
-    
+    <script type="text/javascript" src="../static/js/salvattore.js"></script>
 {% endblock %}

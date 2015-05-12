@@ -1,26 +1,26 @@
-<ul id="projectsList" class="row">
+<ul id="projectsList" class="row" >
+	<div id="columns" data-columns>
 	
-	{% for project in projectsList %}
-		
-		<li class="row card">
-			
-				<div class="description ">
-					<div class="description_content">
-						<div class="row project-header">
-							<a href="/project/{{project.title.lower().replace(' ','-')}}">
-								<h3 class="col-sm-8">{{project.title}}</h3>
-							</a>
-							<p class="col-sm-4 dates">{{project.date}}</p>
-						</div>
-						<p>{{project.snippet}}</p>
+		{% for project in projectsList %}
+		  <div class="card">
+		  	<!-- <li class="row card col-md-5 item"> -->
+			<div class="description ">
+				<div class="description_content">
+					<div class="row project-header">
 						<a href="/project/{{project.title.lower().replace(' ','-')}}">
-							<button class="btn btn-default btn-xs" ><img class="read-more-icon" src="../static/img/open-book.svg" style=" ">   Read More</button>
+							<h3 class="col-sm-8">{{project.title}}</h3>
 						</a>
+						<p class="col-sm-4 dates">{{project.date}}</p>
 					</div>
+					<p>{{project.snippet}}</p>
+					<a href="/project/{{project.title.lower().replace(' ','-')}}">
+						<button class="btn btn-default btn-xs" ><img class="read-more-icon" src="../static/img/open-book.svg" style=" ">   Read More</button>
+					</a>
 				</div>
-				<a href="/project/{{project.title.lower().replace(' ','-')}}">
-					<img class="projectPic " src="{{project.imagesLinks}}">
-				</a>
+			</div>
+			<a href="/project/{{project.title.lower().replace(' ','-')}}">
+				<img class="projectPic " src="{{project.imagesLinks}}">
+			</a>
 			<div class="tags">
 				<img src="../static/img/price-tag.svg" style="height: 15;">
 				{% for tag in project.tags %}
@@ -32,7 +32,8 @@
 					<!-- </span> -->
 				{% endfor %}
 			</div>
-		</li>
-		
-	{% endfor %}
+		</div>
+		<!-- </li> -->		
+		{% endfor %}
+	</div>
 </ul>

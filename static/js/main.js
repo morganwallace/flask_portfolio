@@ -126,7 +126,7 @@ $(document).ready(function(){
 		$("#menu-project").addClass('active');
 	};
 
-	$(".navbar li").hover(function(){
+	$("#navbuttons div span").hover(function(){
 		// $("#menu-project").removeClass('active');
 		$(this).toggleClass('menu-hover');
 		// console.log('hovered');
@@ -145,7 +145,7 @@ $(document).ready(function(){
 	  // Implement the logo animation
 	  if(window.location.pathname=='/'){
 		  $("#svg_logo").css({width:"110px"})
-		  logoFlicker();
+		  // logoFlicker();
 	  }
 
 	// if ($(".project-link").attr('href').search('github')attr('href').search('github')>0){
