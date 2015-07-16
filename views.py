@@ -1,5 +1,6 @@
 from flask import session, request, make_response, jsonify, flash, url_for, redirect,g,render_template,Flask, abort ,g
 from flask.ext.sqlalchemy import SQLAlchemy
+from sqlalchemy import desc
 import jinja2
 
 import markdown
@@ -7,6 +8,7 @@ from flask import Markup
 
 import os,time
 from datetime import date
+import datetime
 
 from app import app
 from manage import db, Project, User
@@ -61,9 +63,7 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 
-# Google Analytics id stored in ENV variable
-gaID=os.environ.get('gaID')
-app.config['gaID'] = gaID
+
 
 
 # login setup from tutorial: 
@@ -121,30 +121,31 @@ def get_first_image(img_str):
 
 @app.route('/')
 def home():
-    projects=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks,Project.snippet,Project.date).all()
+    projects=Project.query.order_by(desc(Project.date)).all()
     
     # all_users = User.query.all()
-    projectsList=[]
+    # projectsList=[]
     # img_url=get_first_image(proj[5])
-    for proj in projects:
+    # for proj in projects:
         
-        projectsList.append({
-            'title':str(proj[0]).title(),
-            'body':Markup(markdown.markdown(proj[1])),
-            'projectType':proj[2],
-            'tags':proj[3].split(","),
-            'externalLink':proj[4],
-            'imagesLinks':get_first_image(proj[5]), #only take first photo
-            'snippet':proj[6],
-            'date':date.fromtimestamp(proj[7]*24*3600).strftime("%b %Y"),
-            'timestamp':proj[7],
-            })
-    projectsList= sorted(projectsList, key=lambda k: k['timestamp'])
-    projectsList.reverse()
+    #     projectsList.append({
+    #         'title':str(proj[0]).title(),
+    #         'body':Markup(markdown.markdown(proj[1])),
+    #         'projectType':proj[2],
+    #         'tags':proj[3].split(","),
+    #         'externalLink':proj[4],
+    #         'imagesLinks':get_first_image(proj[5]), #only take first photo
+    #         'snippet':proj[6],
+    #         'date':date.fromtimestamp(proj[7]*24*3600).strftime("%b %Y"),
+    #         'timestamp':proj[7],
+    #         })
+    # projects=[project.__dict__ for project in projects]
+    # projects= sorted(projects, key=lambda k: k['date'])
+    # projects.reverse()
 
     
     return render_template('index.html',
-        projectsList=projectsList,gaID=gaID)
+        projectsList=projects)
 
 @login_manager.user_loader
 def load_user(id):
@@ -203,50 +204,16 @@ def admin():
 @app.route('/project/<title>')
 def project(title):
     title=title.replace("-"," ")
-    myproject=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks,Project.date,Project.cover_photo,Project.codeLink).filter(Project.title==title.lower()).first()
-    app.logger.debug(myproject)
-    app.logger.debug(title)
-    title=str(myproject[0]).title()
-    # app.logger.debug(myproject[5].split(","))
-    if myproject[7]!=None:
-        coverphoto= myproject[7].split(",")
-    else:
-        coverphoto=None
+    myproject=Project.query.filter(Project.title==title.lower()).first()
+    myproject.title=str(myproject.title).title()
 
-    print myproject[8]
-    return render_template('project.html',
-        title=title, 
-        body=Markup(markdown.markdown(myproject[1])),
-        projectType=myproject[2],
-        tags=myproject[3].split(","),
-        externalLink=myproject[4],
-        imagesLinks=myproject[5].split(','),
-        pageTitle=title+" - Morgan Wallace",
-        date=date.fromtimestamp(myproject[6]*24*3600).strftime("%b %d, %Y"),
-        coverphoto=coverphoto,
-        codelink=myproject[8]
-        )   
-
+    return render_template("project.html",project=myproject)
 
 @app.route('/tags/<tag>')
 def tag(tag):
-    projects=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks,Project.snippet,Project.date).filter(Project.tags.contains(tag)).all()
-    # projects=db.session.query(Project.title,Project.body,Project.projectType,Project.tags,Project.externalLink,Project.imagesLinks).filter(.all()    
-    projectsList=[]
-    for proj in projects:
-        # app.logger.debug(proj[7])
-        projectsList.append({
-            'title':str(proj[0]).title(),
-            'body':proj[1],
-            'projectType':proj[2],
-            'tags':proj[3].split(","),
-            'externalLink':proj[4],
-            'imagesLinks':url_for('static',filename='img/'+proj[5].split(",")[0]), #only take first photo
-            'snippet':proj[6],
-            'date':date.fromtimestamp(proj[7]*24*3600).strftime("%d %b %Y"),
-            'timestamp':proj[7],
-            })
-    return render_template('tags.html', projectsList=projectsList,pageTitle=tag+" - Morgan Wallace",tag=tag)   
+    projects=Project.query.filter(Project.tags.contains(tag)).all()
+   
+    return render_template('tags.html', projectsList=projects,pageTitle=tag+" - Morgan Wallace",tag=tag)   
 
 
 @app.route('/robots.txt')
@@ -282,3 +249,12 @@ def taglist():
         resp = make_response(jsonify(success=True,title=request.form['rawtext']))
         return render_template('taglist.html', formatted=formatted)
     return render_template('taglist.html')
+
+
+
+@app.route('/pills')
+@login_required
+def pills():
+    
+    return render_template('pills.html')
+

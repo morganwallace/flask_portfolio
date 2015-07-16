@@ -1,0 +1,1578 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ma",
+				"margin-bottom"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"padding",
+				"padding-right"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"fo",
+				"forEach"
+			],
+			[
+				"me",
+				"meta"
+			],
+			[
+				"for",
+				"form	Tag"
+			],
+			[
+				"sumo",
+				"sumoInterval"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"recor",
+				"record"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"rec",
+				"record_form"
+			],
+			[
+				"get",
+				"getsample"
+			],
+			[
+				"my",
+				"mydevice"
+			],
+			[
+				"if",
+				"if	If Condition"
+			],
+			[
+				"max",
+				"maxes"
+			],
+			[
+				"re",
+				"rep_counts"
+			],
+			[
+				"a",
+				"axis_window"
+			],
+			[
+				"labe",
+				"labelled_dir"
+			],
+			[
+				"lab",
+				"labelled_dir"
+			],
+			[
+				"class",
+				"classify_these"
+			],
+			[
+				"pi",
+				"pickle"
+			],
+			[
+				"ge",
+				"get_features"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"s",
+				"span	Tag"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"app",
+				"app"
+			],
+			[
+				"regis",
+				"registered_user"
+			],
+			[
+				"la",
+				"last_name"
+			],
+			[
+				"us",
+				"username"
+			],
+			[
+				"add",
+				"addtagfx"
+			],
+			[
+				"P",
+				"POST"
+			],
+			[
+				"fr",
+				"formatted"
+			],
+			[
+				"menu",
+				"menu-project"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"res",
+				"resized"
+			],
+			[
+				"img",
+				"imgURL"
+			],
+			[
+				"bord",
+				"border-radius"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"m",
+				"margin-right"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"l",
+				"li	Tag"
+			],
+			[
+				"u",
+				"ul	Tag"
+			],
+			[
+				"time",
+				"timestamp"
+			],
+			[
+				"projects",
+				"projectsList"
+			],
+			[
+				"com",
+				"completed_urls"
+			],
+			[
+				"url",
+				"url_for"
+			],
+			[
+				"pro",
+				"projectsList"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"log",
+				"logger"
+			],
+			[
+				"b",
+				"bgwidth"
+			],
+			[
+				"e",
+				"else"
+			],
+			[
+				"projec",
+				"projectsViewer"
+			],
+			[
+				"proj",
+				"projectType"
+			],
+			[
+				"proje",
+				"projects"
+			],
+			[
+				"im",
+				"imagesLink"
+			],
+			[
+				"h",
+				"href	Attr"
+			],
+			[
+				"lo",
+				"logger"
+			],
+			[
+				"ex",
+				"externalLink"
+			],
+			[
+				"poem",
+				"poem_id"
+			],
+			[
+				"border-co",
+				"border-color"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"sign",
+				"signup-btn"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"firs",
+				"first"
+			],
+			[
+				"si",
+				"sign-in"
+			],
+			[
+				"te",
+				"text"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"usr",
+				"user_id"
+			],
+			[
+				"ac",
+				"action	Attr"
+			],
+			[
+				"po",
+				"poem_id"
+			],
+			[
+				"de",
+				"debug"
+			],
+			[
+				"rep",
+				"rep_tracker"
+			],
+			[
+				"blu",
+				"bluetooth_enabled"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"fa",
+				"False"
+			],
+			[
+				"vi",
+				"Visualization"
+			],
+			[
+				"blo",
+				"blockWidth"
+			],
+			[
+				"key",
+				"key_spacing"
+			],
+			[
+				"new",
+				"new_block"
+			],
+			[
+				"prog",
+				"progress_svg"
+			],
+			[
+				"bl",
+				"blockWidth"
+			],
+			[
+				"date",
+				"extent_date"
+			],
+			[
+				"ext",
+				"extent_date"
+			],
+			[
+				"ho",
+				"hover"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"x",
+				"xScale"
+			],
+			[
+				"this",
+				"thisDate"
+			],
+			[
+				"char",
+				"chart_div"
+			],
+			[
+				"data",
+				"dataz"
+			],
+			[
+				"Pro",
+				"progressData"
+			],
+			[
+				"tick",
+				"tickSize"
+			],
+			[
+				"w",
+				"weight"
+			],
+			[
+				"goa",
+				"goals_complete"
+			],
+			[
+				"goals",
+				"goals_complete"
+			],
+			[
+				"goal",
+				"goals_complete"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"total",
+				"total_goals_complete"
+			],
+			[
+				"y",
+				"y_progress_domain"
+			],
+			[
+				"va",
+				"values"
+			],
+			[
+				"to",
+				"total_days_exercised"
+			],
+			[
+				"days",
+				"daysInARow"
+			],
+			[
+				"kpi",
+				"kpi_viz"
+			],
+			[
+				"lin",
+				"line"
+			],
+			[
+				"se",
+				"session_time"
+			],
+			[
+				"p",
+				"progressData"
+			],
+			[
+				"t",
+				"t_diff"
+			],
+			[
+				"samp",
+				"sample"
+			],
+			[
+				"sa",
+				"sample"
+			],
+			[
+				"sav",
+				"saved_data"
+			],
+			[
+				"conn",
+				"conn_type"
+			],
+			[
+				"ser",
+				"ser1"
+			],
+			[
+				"senso",
+				"sensor_stream"
+			],
+			[
+				"conne",
+				"connected"
+			],
+			[
+				"save",
+				"saved_data"
+			],
+			[
+				"st",
+				"st_dev"
+			],
+			[
+				"dve",
+				"DEVICE_CONNECTED"
+			],
+			[
+				"exer",
+				"exercise_data"
+			],
+			[
+				"blue",
+				"bluetooth_enabled"
+			],
+			[
+				"badge",
+				"badgeNum"
+			],
+			[
+				"nex",
+				"next_start_time"
+			],
+			[
+				"set",
+				"settings"
+			],
+			[
+				"peaks",
+				"peaks_soFar"
+			],
+			[
+				"pea",
+				"peaks_soFar"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"Morgan Wallace's Personal Homepage\">\n    <meta name=\"author\" content=\"Morgan Wallace\">\n    <meta property=\"og:type\" content=\"website\">\n    <meta property=\"og:site_name\" content=\"Morgan Wallace's Personal Homepage\">\n    <link rel=\"shortcut icon\" href=\"../static/img/favicon.ico\">\n    {% if pageTitle %}\n      <title>{{ pageTitle }} - Morgan Wallace</title>\n    {% else %}\n      <title>Morgan Wallace</title>\n    {% endif %}\n\n    <!-- Bootstrap core CSS -->\n    <link href=\"../static/css/bootstrap.min.css\" rel=\"stylesheet\">\n    <!-- Grid CSS -->\n    <!-- <link href=\"../static/css/grid.css\" rel=\"stylesheet\"> -->\n    <!-- Custom CSS -->\n    <link href=\"../static/css/style.css\" rel=\"stylesheet\">\n\n    <!-- Fonts from google -->\n<!--     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400' rel='stylesheet' type='text/css'> -->\n    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300' rel='stylesheet' type='text/css'>\n    <!-- jQuery -->\n    <script type=\"text/javascript\" src=\"../static/js/jquery.min.js\"></script>\n    <script type=\"text/javascript\" src=\"../static/js/bootstrap.min.js\"></script>\n    <!--<script src=\"//load.sumome.com/\" data-sumo-site-id=\"7c42bff1c75fdef0adbf08fd858af85afa72c87fc50b05e6c77cd6655f78af3b\" async=\"async\"></script>-->\n  </head>\n\n  \n  <body>\n    <div id=\"wrap\">\n      <!-- <div class=\"navbar navbar-inverse\" role=\"navigation\"> -->\n      \n      {% include 'header.html' %}\n      \n      <div class=\"container\" id='content'> \n        {% with messages = get_flashed_messages() %}\n          {% if messages %}\n\n            <div class=\"container\">\n              <div class=\"row\">\n                <div class=\"col-sm-12 card messages\">\n                  <!-- <span class=\"close-messages\"> -->\n                    <img  id='close-messages' src=\"../static/img/close.svg\">\n                  <!-- </span> -->\n                  \n                  <ul>\n                  {% for message in messages %}\n                      <li class=\"message\">{{ message }} </li>\n                  {% endfor %}\n                  </ul>\n                </div>\n              </div>\n                \n            </div>\n\n          {% endif %}\n        {% endwith %}\n      \n  \n      \n        {% block content %}\n        {% endblock %}\n      </div>\n      {% include 'footer.html' %}\n    </div>\n  </body>\n\n    <!-- Bootstrap core JavaScript\n    ================================================== -->\n    <!-- Placed at the end of the document so the pages load faster -->\n    \n\n    <script type=\"text/javascript\" src=\"../static/js/main.js\"></script>\n\n    \n    <!-- Google Analytics -->\n    {% if config.gaID %}\n      <script type=\"text/javascript\">\n        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\n\n        ga('create', '{{config.gaID}}', 'auto');\n        ga('send', 'pageview');\n\n      </script>\n    {% endif %}\n</html>",
+			"file": "templates/layout.html",
+			"file_size": 3363,
+			"file_write_time": 130759427250000000,
+			"settings":
+			{
+				"buffer_size": 3372,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/index.html",
+			"settings":
+			{
+				"buffer_size": 856,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/projects.html",
+			"settings":
+			{
+				"buffer_size": 970,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "migrations/versions/253a5c28b668_.py",
+			"settings":
+			{
+				"buffer_size": 2183,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "update_database.command",
+			"settings":
+			{
+				"buffer_size": 349,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/css/grid.css",
+			"settings":
+			{
+				"buffer_size": 519,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/about.html",
+			"settings":
+			{
+				"buffer_size": 1127,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/footer.html",
+			"settings":
+			{
+				"buffer_size": 358,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/header.html",
+			"settings":
+			{
+				"buffer_size": 540,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app.py",
+			"settings":
+			{
+				"buffer_size": 929,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "manage.py",
+			"settings":
+			{
+				"buffer_size": 3421,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".git/config",
+			"settings":
+			{
+				"buffer_size": 404,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views.py",
+			"settings":
+			{
+				"buffer_size": 9478,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config.py",
+			"settings":
+			{
+				"buffer_size": 760,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/css/style.css",
+			"settings":
+			{
+				"buffer_size": 8271,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Snippet: ",
+				"Snippet: Method"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"\\q",
+			"s;lkdf",
+			"what the fuck",
+			"help()",
+			"help",
+			"print (\"hello world\")",
+			"print \"hello world\"",
+			"help"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/Morgan/Developer/flask-portfolio",
+		"/Users/Morgan/Developer/flask-portfolio/static"
+	],
+	"file_history":
+	[
+		"/Users/Morgan/Developer/flask-portfolio/flask-portfolio.sublime-project",
+		"/Users/Morgan/Developer/flask-portfolio/static/js/main.js",
+		"/Users/Morgan/Developer/flask-portfolio/static/css/grid.css",
+		"/Users/Morgan/Developer/flask-portfolio/static/js/salvattore.js",
+		"/Users/Morgan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Morgan/Developer/flask-portfolio/templates/login.html",
+		"/Users/Morgan/Developer/flask-portfolio/static/js/viz.js",
+		"/Users/Morgan/Developer/flask-portfolio/templates/ravelry.html",
+		"/Users/Morgan/Developer/scrapegroupon/scraper.py",
+		"/Users/Morgan/Developer/flask-portfolio/templates/about_sidebar.html",
+		"/Users/Morgan/Developer/flask-portfolio/templates/pills.html",
+		"/Users/Morgan/Desktop/untitled.html",
+		"/Users/Morgan/.zshrc",
+		"/Users/Morgan/Developer/flask-portfolio/templates/tags.html",
+		"/Users/Morgan/Developer/flask-portfolio/static/css/style.css",
+		"/Users/Morgan/Developer/flask-portfolio/templates/about.html",
+		"/Users/Morgan/Developer/Fitness-Tracking/Website/static/js/main.js",
+		"/Users/Morgan/Developer/Fitness-Tracking/Website/templates/index.html",
+		"/Users/Morgan/Developer/Fitness-Tracking/Website/static/js/vis.js",
+		"/Users/Morgan/Developer/xfit/Device.py",
+		"/Users/Morgan/Developer/xfit/config.py",
+		"/Users/Morgan/Developer/xfit/features.py",
+		"/Users/Morgan/Developer/xfit/Procfile",
+		"/Users/Morgan/Developer/xfit/.gitignore",
+		"/Users/Morgan/Developer/xfit/viz.py",
+		"/Users/Morgan/Developer/Fitness-Tracking/Website/hercubit/rep_tracker_svc.py",
+		"/Users/Morgan/Developer/xfit/Peakdetect.py",
+		"/Users/Morgan/Developer/xfit/detect.py",
+		"/Users/Morgan/Developer/xfit/train.py",
+		"/Users/Morgan/Developer/flask-portfolio/todo-features.md",
+		"/Users/Morgan/Developer/xfit/app.py",
+		"/Users/Morgan/Developer/xfit/saved/labeled_data.csv",
+		"/Users/Morgan/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/Morgan/Downloads/openssl-0.9.8e/INSTALL.MacOS",
+		"/Users/Morgan/Developer/xfit/requirements.txt",
+		"/Library/LaunchAgents/com.adobe.AAM.Updater-1.0.plist",
+		"/Users/Morgan/Developer/flask-portfolio/templates/project.html",
+		"/Users/Morgan/Developer/flask-portfolio/templates/layout_admin.html",
+		"/Users/Morgan/Developer/flask-portfolio/templates/blog.html",
+		"/Users/Morgan/Developer/flask-portfolio/manage.py",
+		"/Users/Morgan/Developer/flask-portfolio/templates/register.html",
+		"/Users/Morgan/Developer/flask-portfolio/app.py",
+		"/Users/Morgan/Developer/flask-portfolio/requirements.txt",
+		"/Users/Morgan/Developer/flask-portfolio/templates/layout.html",
+		"/Users/Morgan/Developer/flask-portfolio/templates/index.html",
+		"/Users/Morgan/Developer/flask-portfolio/update_database.command",
+		"/Users/Morgan/Developer/flask-portfolio/forms.py",
+		"/Users/Morgan/Developer/flask-portfolio/templates/login_old.html",
+		"/Users/Morgan/Developer/flask-portfolio/config.py",
+		"/Users/Morgan/Developer/flask-portfolio/templates/taglist.html",
+		"/Users/Morgan/Developer/flask-portfolio/app/app.py",
+		"/Users/Morgan/Developer/flask-portfolio/app/__init__.py",
+		"/Users/Morgan/Developer/flask-portfolio/app/run.py",
+		"/Users/Morgan/Developer/flask-portfolio/__init__.py",
+		"/Users/Morgan/Developer/blogger api/index.html",
+		"/Users/Morgan/Developer/flask-portfolio/templates/add.html",
+		"/Users/Morgan/Developer/flask-portfolio/test.py",
+		"/Users/Morgan/Developer/flask-portfolio/.gitignore~",
+		"/Users/Morgan/Developer/flask-portfolio/migrations/alembic.ini",
+		"/Users/Morgan/Developer/flask-portfolio/publish.command",
+		"/Users/Morgan/.zprofile",
+		"/Users/Morgan/.profile",
+		"/Users/Morgan/Developer/flask-portfolio backup/templates/index.html",
+		"/Users/Morgan/Developer/helpmypoem/static/js/main.js",
+		"/Users/Morgan/Developer/flask-portfolio/templates/404.html",
+		"/Users/Morgan/Dropbox/Sites/morganwallace.com/index.html",
+		"/Users/Morgan/Developer/flask-portfolio/scraper.py",
+		"/Users/Morgan/Developer/portfolio-django/templates/index.html",
+		"/Users/Morgan/Developer/django-base-template/manage.py",
+		"/Users/Morgan/Developer/Fitness-Tracking/app_builds/hercubit.command",
+		"/Users/Morgan/Developer/helpmypoem/update_database.command",
+		"/Users/Morgan/Developer/helpmypoem/manage.py",
+		"/Users/Morgan/Developer/helpmypoem/static/css/sidebar.css",
+		"/Users/Morgan/Developer/helpmypoem/static/js/config.js",
+		"/Users/Morgan/Developer/helpmypoem/templates/404.html",
+		"/Users/Morgan/Developer/helpmypoem/config.py",
+		"/Users/Morgan/Developer/helpmypoem/models.py",
+		"/Users/Morgan/Developer/helpmypoem/templates/add_poem.html",
+		"/Users/Morgan/Developer/helpmypoem/templates/index.html",
+		"/Users/Morgan/Developer/heroku-python-skeleton/app.py",
+		"/Users/Morgan/Developer/helpmypoem/app.py",
+		"/Users/Morgan/Developer/poemeditor/app.py",
+		"/Users/Morgan/Developer/poemeditor/setup_db.py",
+		"/Users/Morgan/Developer/poemeditor/templates/index.html",
+		"/Users/Morgan/Developer/poemeditor/Procfile",
+		"/Users/Morgan/Developer/poemeditor/config.py",
+		"/Users/Morgan/Developer/Fitness-Tracking/install_dependencies.command",
+		"/Users/Morgan/Developer/Fitness-Tracking/venv/lib/python2.7/site-packages/hercubit/device.py",
+		"/Users/Morgan/Developer/Fitness-Tracking/venv/lib/python2.7/site-packages/hercubit/rep_tracker_svc.py",
+		"/Users/Morgan/Developer/Fitness-Tracking/Website2/static/css/style.css",
+		"/Users/Morgan/Developer/Fitness-Tracking/Website2/static/js/jquery.tipsy.js",
+		"/Users/Morgan/Developer/Fitness-Tracking/Website2/static/js/main.js",
+		"/Users/Morgan/Developer/Fitness-Tracking/Website2/static/js/vis.js",
+		"/Users/Morgan/Developer/Fitness-Tracking/Website2/static/js/vis_profile.js",
+		"/Users/Morgan/Developer/Fitness-Tracking/Website2/static/js/websockets.js",
+		"/Users/Morgan/Developer/Fitness-Tracking/Website2/app.py",
+		"/Users/Morgan/Developer/Fitness-Tracking/Website2/templates/index.html",
+		"/Users/Morgan/Developer/Fitness-Tracking/local_hercubit.command",
+		"/Users/Morgan/Downloads/novus-nvd3-6867ea6 2/src/models/multiBar.js",
+		"/Users/Morgan/Downloads/novus-nvd3-6867ea6 2/src/models/multiBarChart.js",
+		"/Users/Morgan/Dropbox/Autodesk/Visualization/Get_Satisfaction_Visualization/scripts/viualization.js",
+		"/Users/Morgan/Developer/Fitness-Tracking/#install numpy, scipy, and sklearn",
+		"/Users/Morgan/Desktop/Screen Shot 2014-05-04 at 11.40.25 AM.png",
+		"/Users/Morgan/Developer/Fitness-Tracking/venv/lib/python2.7/site-packages/hercubit/rep_tracker.py",
+		"/Users/Morgan/Developer/Fitness-Tracking/Python viz/animated_graph.py",
+		"/Users/Morgan/anaconda/lib/python2.7/site-packages/hercubit/rep_tracker.py",
+		"/Users/Morgan/Developer/classify_exercise/machine_learning/saved_data.py",
+		"/Users/Morgan/anaconda/lib/python2.7/site-packages/hercubit/device.py",
+		"/Users/Morgan/Developer/classify_exercise/machine_learning/Machine Learning - Free Weights.ipynb",
+		"/Users/Morgan/Developer/classify_exercise/machine_learning/exercise_analysis.py",
+		"/Users/Morgan/Developer/classify_exercise/machine_learning/labeled_data.csv",
+		"/Users/Morgan/Developer/classify_exercise/machine_learning/manually_add_reps.py",
+		"/Users/Morgan/Developer/classify_exercise/machine_learning/Machine Learning - Free Weights.py",
+		"/Users/Morgan/Desktop/test.py",
+		"/Users/Morgan/Developer/Fitness-Tracking/local_hercubit_for_app.command",
+		"/Users/Morgan/Developer/Fitness-Tracking/hercubit.command",
+		"/Users/Morgan/Developer/Fitness-Tracking/update_venv_path.py",
+		"/Users/Morgan/Developer/Fitness-Tracking/venv/lib/python2.7/site-packages/hercubit/settings.py",
+		"/Users/Morgan/Developer/test_build/install.command",
+		"/Users/Morgan/Developer/Hercubit_installers/hercubit_app/install.command",
+		"/Users/Morgan/Developer/Fitness-Tracking/venv/bin/activate",
+		"/Users/Morgan/Developer/Fitness-Tracking/dev_hercubit_derek.command",
+		"/Users/Morgan/Developer/test_build/hercubit_diary_study/update_venv_path.py",
+		"/Users/Morgan/Desktop/save_raw.py",
+		"/Users/Morgan/Developer/Fitness-Tracking/venv/lib/python2.7/site-packages/matplotlib-1.3.1-py2.7-macosx-10.9-intel.egg/pylab.py",
+		"/Users/Morgan/Developer/Fitness-Tracking/venv/lib/python2.7/site-packages/hercubit/html_graph.py",
+		"/Users/Morgan/Developer/Fitness-Tracking/Python viz/test2.py",
+		"/Users/Morgan/Developer/Fitness-Tracking/Python viz/html_graph.py"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".js",
+			"pic",
+			"img",
+			"resp",
+			"response",
+			"Alegreya",
+			"content",
+			"hover",
+			"nav",
+			"ul",
+			".wrap",
+			".navbar",
+			".row",
+			"hover",
+			"control-group",
+			"PORT",
+			"port",
+			"data",
+			"aboutcol",
+			"navbar",
+			"col-sm-5",
+			"xs-6",
+			"xs-2",
+			"graph",
+			"mybean",
+			"print",
+			"set No",
+			"col",
+			"date",
+			"<script",
+			"#content",
+			"content",
+			"30px",
+			"footer",
+			"body",
+			"footer",
+			"config",
+			":hover",
+			"font",
+			"brand",
+			"content",
+			"hover",
+			"<img",
+			"last_name",
+			"first_name",
+			"logger",
+			".active",
+			"inset",
+			"url",
+			"projectslist",
+			"text-align",
+			"profile",
+			"content",
+			"hover",
+			"weight",
+			"pic",
+			"font-w",
+			"content",
+			"imagesLink",
+			"poem",
+			"Poem",
+			"docs.js",
+			"TestSequenceFunctions",
+			"production",
+			"url",
+			"{{ project_name }}",
+			"project_name",
+			"app",
+			"query",
+			"profile",
+			"cookies",
+			"cookie",
+			".query",
+			"os",
+			"debug",
+			"rep_tracker",
+			"print blue",
+			"$('#new_block')",
+			"#new_block",
+			"go",
+			"new_block",
+			".new_block",
+			"1000",
+			"speed",
+			"font-si",
+			"extent",
+			"visualiza",
+			"visual",
+			"graph",
+			"rect",
+			"format",
+			"axis",
+			"d.id",
+			"trigger",
+			"options.trigger",
+			"color",
+			"blockhei",
+			"blockhe",
+			"blockHeigh",
+			"rect",
+			"parsedate",
+			"format",
+			"format=",
+			"parse",
+			"parsedate",
+			"parsedate(",
+			"webdatase",
+			"circle",
+			"viz(",
+			"parsedate",
+			"update",
+			"model",
+			"rep",
+			"updateActivity",
+			"tooltip",
+			".tooltip",
+			"score",
+			"badge",
+			"icon",
+			"scale",
+			".1f",
+			"rect",
+			"forEach",
+			"sock",
+			"app.run",
+			"print ",
+			"drawch",
+			"drawchart"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"form-group",
+			"xs-4",
+			"xs-6",
+			"mydevice",
+			"<script type=\"text/javascript\"",
+			"lastname",
+			"firstname",
+			"project",
+			"testDevice",
+			"portfolio",
+			"el",
+			"#new_block",
+			"speed",
+			"inf",
+			"exercise_data",
+			"bicep",
+			"ser",
+			"conn_type",
+			"settings.conn_type",
+			"settings.sampleRate",
+			"settings.ser",
+			"settings.",
+			"csv_file",
+			"archive",
+			"../static/js/",
+			"../static/css/",
+			"../static/img/",
+			"../static/img",
+			"rects",
+			"dominant_axis",
+			"dominant_slope",
+			"prev",
+			"peak_range",
+			"dip",
+			"peak",
+			"_y",
+			"data",
+			"axis",
+			"sample",
+			"current_sample",
+			"peak_",
+			"detect_rep",
+			"time.time()",
+			"timer()",
+			"timePassed",
+			"Dir",
+			"line",
+			"child",
+			"\"../static/js",
+			"\"../static/css",
+			"../static/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "templates/layout.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3372,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1348,
+								1351
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 321.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "templates/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 856,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								841,
+								841
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 201.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "templates/projects.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 970,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								188,
+								199
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "migrations/versions/253a5c28b668_.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2183,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 214.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "update_database.command",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 349,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								307,
+								280
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "static/css/grid.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 519,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								251,
+								251
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "templates/about.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1127,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1068,
+								1068
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "templates/footer.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 358,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								150,
+								150
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "templates/header.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 540,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								288,
+								288
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 9,
+					"file": "app.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 929,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								473,
+								473
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 131.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "manage.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1511,
+								1511
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 404.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": ".git/config",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 404,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9478,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4720,
+								4720
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2275.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "config.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 760,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 71.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "static/css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8271,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1012,
+								1012
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1017.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.5,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 214.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "flask-portfolio.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 171.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -13,6 +13,11 @@ app.config.from_object('config')
 # see http://flask.pocoo.org/docs/0.10/errorhandling/#when-in-doubt-run-manually
 if os.environ.get('SERVERTYPE')=='dev':
 	app.debug = True
+	# Google Analytics id stored in ENV variable
+	
+else: #production setup
+	gaID=os.environ.get('gaID')
+	# app.config['gaID'] = gaID
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
@@ -20,8 +25,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
 from views import *
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-
+    port = int(os.environ.get("PORT", 5002))
+    # port=6000
     #to run a debug mode only when developing locally run this in terminal:
     # $ export SERVERTYPE="dev"
 

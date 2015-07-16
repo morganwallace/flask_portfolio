@@ -3,19 +3,19 @@
 {% block content %}
 <div class="container-fluid">
   <div class="row">
-    {% if coverphoto %}
-      <img src="../static/img/{{coverphoto}}" id="cover-photo">
+    {% if project.coverphoto %}
+      <img src="../static/img/{{project.coverphoto}}" id="cover-photo">
     {% endif %}
     <div class="col-md-10 col-md-offset-1 main">
         
         <div id="content-box" class="card">
          
-          <h1 class="page-header project-title ">{{title}}</h1>
-          <h4 >{{date}}</h4>
+          <h1 class="page-header project-title ">{{project.title}}</h1>
+          <h4 >{{format_date(project.date,"long")}}</h4>
           
           
           <div class="tags">
-              {% for tag in tags %}
+              {% for tag in project.tags.split(",") %}
                 <!-- <span class="col-sm-6"> -->
                   <a href="/tags/{{tag}}">
                     <span class="label label-default">{{tag}}</span>
@@ -25,23 +25,26 @@
 
             </div>
             <br>
-          {{body}}
-          {% if externalLink %}
+          <div id="project-body" style="overflow: none;  display: inline-block;">
+              {{project.body|safe}}  
+          </div>
+          
+          {% if project.externalLink %}
             <br>
-              <a href="{{externalLink}}" class="navbar-btn project-link btn-success btn" >
-               <img src='../static/img/globe-white.svg' style="width:14px">  View {{title}}
+              <a href="{{project.externalLink}}" class="navbar-btn project-link btn-success btn" >
+               <img src='../static/img/globe-white.svg' style="width:14px">  View {{project.title}}
               </a>
           {% endif %}
-          {% if codelink %}
+          {% if project.codelink %}
             <br>
-              <a href="{{codelink}}" class="navbar-btn code-link btn-info btn" >
+              <a href="{{project.codelink}}" class="navbar-btn code-link btn-info btn" >
                <img src="../static/img/github-white.svg" style="width:14px">  View code
               </a>
           {% endif %}
-          {% if imagesLinks %}
-            {% for piclink in imagesLinks %}
+          {% if project.imagesLinks %}
+            {% for piclink in project.imagesLinks.split(",") %}
               <br><br>
-              <img class="project-images" src="../static/img/{{piclink}}">
+              <img class="project-images" src="{{url_for('static', filename='img/'+piclink)}}">
             {% endfor %}
           {% endif %}
           <br>
