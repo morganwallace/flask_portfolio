@@ -1,0 +1,11 @@
+{% macro format_date(date,length) %}
+
+	{% if length == "medium" %}
+	  {{date.strftime('%b %d')}}
+    {% elif length == "long" %}
+      {{date.strftime('%b %d %Y')}}
+    {% elif length == "extralong" %}
+      {{date.strftime('%b %d %Y %I:%M %p')}}
+	{% endif %}
+
+{% endmacro %}

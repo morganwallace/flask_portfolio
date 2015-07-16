@@ -1,39 +1,38 @@
-<ul id="projectsList" class="row" >
-	<div id="columns" data-columns>
-	
-		{% for project in projectsList %}
-		  <div class="card">
-		  	<!-- <li class="row card col-md-5 item"> -->
-			<div class="description ">
-				<div class="description_content">
-					<div class="row project-header">
-						<a href="/project/{{project.title.lower().replace(' ','-')}}">
-							<h3 class="col-sm-8">{{project.title}}</h3>
-						</a>
-						<p class="col-sm-4 dates">{{project.date}}</p>
-					</div>
-					<p>{{project.snippet}}</p>
-					<a href="/project/{{project.title.lower().replace(' ','-')}}">
-						<button class="btn btn-default btn-xs" ><img class="read-more-icon" src="../static/img/open-book.svg" style=" ">   Read More</button>
-					</a>
-				</div>
-			</div>
-			<a href="/project/{{project.title.lower().replace(' ','-')}}">
-				<img class="projectPic " src="{{project.imagesLinks}}">
-			</a>
-			<div class="tags">
-				<img src="../static/img/price-tag.svg" style="height: 15;">
-				{% for tag in project.tags %}
-					<!-- <span class="col-sm-6"> -->
-						<a href="/tags/{{tag}}">
-							
-							<span class="label label-default"> {{tag}}</span>
-						</a>
-					<!-- </span> -->
-				{% endfor %}
-			</div>
-		</div>
-		<!-- </li> -->		
-		{% endfor %}
-	</div>
-</ul>
+{% from "macros.html" import format_date with context %}
+<div id="projectsList" class="row" >
+        {% for project in projectsList %}
+          <div class="col-md-3 project-item">
+              <div class="card" style="position:relative">
+                <!-- <li class="row card col-md-5 item"> -->
+                <div class="img-wrapper" >
+                    <a href="/project/{{project.title.lower().replace(' ','-')}}">
+                        <img class="projectPic " src="{{url_for('static', filename='img/'+project.thumbnail)}}">
+                    </a>
+                    
+                </div>
+                <div class="description " style="position:absolute;" hidden>
+                    <a href="/project/{{project.title.lower().replace(' ','-')}}">
+                        <div class="description_content">
+                            
+                            <p>{{project.snippet}}</p>
+                        
+                        </div>
+                    </a>
+                </div>
+                <a href="/project/{{project.title.lower().replace(' ','-')}}">
+                	<h5 class="col-sm-12">{{project.title.title()}}</h5>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+<script type="text/javascript">
+
+	$(".card").hover(function(){
+	    $(this).children(".description").show();
+	},function(){
+	    $(this).children(".description").fadeOut(100);
+	})
+
+
+</script>

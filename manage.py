@@ -6,6 +6,7 @@ import os
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 import sys
+import datetime
 
 app = Flask(__name__)
 
@@ -37,13 +38,14 @@ class Project(db.Model):
     externalLink=db.Column(db.String(255))
     imagesLinks=db.Column(db.String(255))
     snippet=db.Column(db.String(255))
-    date=db.Column(db.Integer)
     codeLink=db.Column(db.String(255))
     cover_photo=db.Column(db.String(255))
+    thumbnail=db.Column(db.String(255))
+    date=db.Column(db.DateTime)
     # user_id=db.Column(db.Integer, db.ForeignKey('user.id'))
     
 
-    def __init__(self, title, body,user_id,projectType,tags,externalLink,imagesLinks,snippet,date,codeLink,cover_photo):
+    def __init__(self, title, body,user_id,projectType,tags,externalLink,imagesLinks,snippet,codeLink,cover_photo,thumbnail,date):
         self.title = title
         self.body = body
         self.user_id= user_id
@@ -52,9 +54,10 @@ class Project(db.Model):
         self.externalLink=externalLink
         self.imagesLinks=imagesLinks
         self.snippet=snippet
-        self.date=date
         self.codeLink=codeLink
         self.cover_photo=cover_photo
+        self.thumbnail=thumbnail
+        self.date=date
         
     def __repr__(self):
         return '<ROW with label: project ID %r>' % self.id
